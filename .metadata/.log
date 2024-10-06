@@ -1,0 +1,39 @@
+!SESSION 2024-10-06 20:15:00.346 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -data /home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-06 20:15:04.775
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-06 20:15:04.776
+!MESSAGE Log4j2 initialized with config file /home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-06 20:15:17.075
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-10-06 20:16:35.597
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/wakatime/eclipse-wakatime/master/update-site/content.jar
+
+!ENTRY org.eclipse.ui 2 2 2024-10-06 20:18:52.130
+!MESSAGE Invalid preference category path: org.eclipse.jdt.ui.preferences.JavaBasePreferencePage (bundle: eclatosa, page: autosave.preferences.AutoSavePreferencePage)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-10-06 20:21:10.014
+!MESSAGE Indexed 'hello-world' (2 sources, 53 headers) in 1.09 sec: 1,948 declarations; 2,834 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-06 20:21:16.113
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-06 20:21:46.920
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-06 20:22:05.503
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-06 20:22:17.171
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-06 20:22:42.287
+!MESSAGE No .vrapperrc or _vrapperrc found.
