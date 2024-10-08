@@ -22,8 +22,14 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+#include<stdio.h>
+#include"printer.h"
+
 int main(void)
 {
+
+
+	ITMPrint("testing ITM send char");
     /* Loop forever */
 	for(;;);
 }

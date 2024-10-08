@@ -1,0 +1,6 @@
+default=local
+eclipse.preferences.version=1
+local.format=1
+local/0/location=/usr/bin/
+local/0/name=local
+local/0/prefix=arm-none-eabi-
