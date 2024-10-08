@@ -29,6 +29,8 @@ int main(void)
 {
 
 
+	// only 4 starts for this course from now we will see how this progresses
+
 	ITMPrint("testing ITM send char");
     /* Loop forever */
 	for(;;);
