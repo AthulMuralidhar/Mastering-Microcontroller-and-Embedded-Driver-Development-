@@ -233,13 +233,15 @@ void ITMPrint(const char *text) {
 080002d4 <main>:
 
 #include<stdio.h>
-#include"printer.h"
+#include "printer.h"
 
 int main(void)
 {
  80002d4:	b580      	push	{r7, lr}
  80002d6:	af00      	add	r7, sp, #0
 
+
+	// only 4 starts for this course from now we will see how this progresses
 
 	ITMPrint("testing ITM send char");
  80002d8:	4802      	ldr	r0, [pc, #8]	@ (80002e4 <main+0x10>)
