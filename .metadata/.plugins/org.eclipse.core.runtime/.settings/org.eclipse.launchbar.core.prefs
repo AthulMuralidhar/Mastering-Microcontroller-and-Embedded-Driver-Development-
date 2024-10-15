@@ -1,7 +1,10 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hello-world,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc_clock_enable
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hello-world,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc_clock_enable,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hse_clock_enable
 eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc_clock_enable/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc_clock_enable/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hello-world/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hello-world/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hse_clock_enable/activeLaunchMode=debug
