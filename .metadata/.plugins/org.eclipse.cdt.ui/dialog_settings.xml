@@ -6,6 +6,7 @@
 	</section>
 	<section name="OptionalMessageDialog.hide.">
 		<item key="askReindex.detail" value="0"/>
+		<item key="FormatAll" value="true"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.STRING_VARIABLE_SELECTION_DIALOG_SECTION">
 		<item key="DIALOG_X_ORIGIN" value="395"/>

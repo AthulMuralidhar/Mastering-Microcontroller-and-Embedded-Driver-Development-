@@ -1,255 +1,46 @@
-08:50:35 **** Clean-only build of configuration Debug for project hello-world ****
-make -j16 clean 
-rm -rf ./Startup/startup_stm32f407vgtx.d ./Startup/startup_stm32f407vgtx.o
-rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
-rm -rf default.size.stdout hello-world.elf hello-world.list hello-world.map
- 
-08:50:40 **** Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-../Src/syscalls.c: In function '_write':
-../Src/syscalls.c:114:7: warning: unused variable 'DataIdx' [-Wunused-variable]
-  114 |   int DataIdx;
-      |       ^~~~~~~
-arm-none-eabi-gcc -o "hello-world.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/hello-world/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hello-world.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: hello-world.elf
- 
-arm-none-eabi-size  hello-world.elf 
-arm-none-eabi-objdump -h -S hello-world.elf  > "hello-world.list"
-   text	   data	    bss	    dec	    hex	filename
-   7384	     92	   1900	   9376	   24a0	hello-world.elf
-Finished building: default.size.stdout
- 
-Finished building: hello-world.list
- 
-08:50:42 **** Incremental Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-size  hello-world.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7384	     92	   1900	   9376	   24a0	hello-world.elf
-Finished building: default.size.stdout
- 
-08:51:59 **** Incremental Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-../Src/syscalls.c: In function '_write':
-../Src/syscalls.c:114:7: warning: unused variable 'DataIdx' [-Wunused-variable]
-  114 |   int DataIdx;
-      |       ^~~~~~~
-arm-none-eabi-gcc -o "hello-world.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/hello-world/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hello-world.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: hello-world.elf
- 
-arm-none-eabi-size  hello-world.elf 
-arm-none-eabi-objdump -h -S hello-world.elf  > "hello-world.list"
-   text	   data	    bss	    dec	    hex	filename
-   7368	     92	   1900	   9360	   2490	hello-world.elf
-Finished building: default.size.stdout
- 
-Finished building: hello-world.list
- 
-08:59:54 **** Incremental Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc -o "hello-world.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/hello-world/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hello-world.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: hello-world.elf
- 
-arm-none-eabi-size  hello-world.elf 
-arm-none-eabi-objdump -h -S hello-world.elf  > "hello-world.list"
-   text	   data	    bss	    dec	    hex	filename
-    904	      0	   1568	   2472	    9a8	hello-world.elf
-Finished building: default.size.stdout
- 
-Finished building: hello-world.list
- 
-09:02:51 **** Incremental Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-In file included from ../Src/main.c:26:
-../Src/printer.h: In function 'ITM_SendChar':
-../Src/printer.h:28:32: error: 'ITM_STIMULUS_PORT0' undeclared (first use in this function); did you mean 'ITM_STIMULUS_PORT_0'?
-   28 |                         while (ITM_STIMULUS_PORT0 == 0);
-      |                                ^~~~~~~~~~~~~~~~~~
-      |                                ITM_STIMULUS_PORT_0
-../Src/printer.h:28:32: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j16 all" terminated with exit code 2. Build might be incomplete.
-09:03:08 **** Incremental Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "hello-world.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/hello-world/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hello-world.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: hello-world.elf
- 
-arm-none-eabi-size  hello-world.elf 
-arm-none-eabi-objdump -h -S hello-world.elf  > "hello-world.list"
-   text	   data	    bss	    dec	    hex	filename
-    884	      0	   1568	   2452	    994	hello-world.elf
-Finished building: default.size.stdout
- 
-Finished building: hello-world.list
- 
-09:03:10 **** Incremental Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-size  hello-world.elf 
-   text	   data	    bss	    dec	    hex	filename
-    884	      0	   1568	   2452	    994	hello-world.elf
-Finished building: default.size.stdout
- 
-17:51:37 **** Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "hello-world.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/hello-world/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hello-world.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: hello-world.elf
- 
-arm-none-eabi-size  hello-world.elf 
-arm-none-eabi-objdump -h -S hello-world.elf  > "hello-world.list"
-   text	   data	    bss	    dec	    hex	filename
-    884	      0	   1568	   2452	    994	hello-world.elf
-Finished building: default.size.stdout
- 
-Finished building: hello-world.list
- 
-17:52:26 **** Incremental Build of configuration Debug for project hello-world ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "hello-world.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/hello-world/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hello-world.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: hello-world.elf
- 
-arm-none-eabi-size  hello-world.elf 
-arm-none-eabi-objdump -h -S hello-world.elf  > "hello-world.list"
-   text	   data	    bss	    dec	    hex	filename
-    884	      0	   1568	   2452	    994	hello-world.elf
-Finished building: default.size.stdout
- 
-Finished building: hello-world.list
- 
-14:00:01 **** Build of configuration Debug for project adc_clock_enable ****
+12:40:03 **** Build of configuration Debug for project stm32f4xx_drivers ****
 make -j16 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc: error: unrecognized command-line option '-fcyclomatic-complexity'
-arm-none-eabi-gcc: error: unrecognized command-line option '-fcyclomatic-complexity'
-arm-none-eabi-gcc: error: unrecognized command-line option '-fcyclomatic-complexity'
-make: *** [Src/subdir.mk:25: Src/sysmem.o] Error 1
-make: *** Waiting for unfinished jobs....
-make: *** [Src/subdir.mk:25: Src/syscalls.o] Error 1
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j16 all" terminated with exit code 2. Build might be incomplete.
-14:00:36 **** Incremental Build of configuration Debug for project adc_clock_enable ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-../Src/main.c:22:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
-   22 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-      |    ^~~~~~~
-arm-none-eabi-gcc -o "adc_clock_enable.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc_clock_enable/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc_clock_enable.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adc_clock_enable.elf
- 
-arm-none-eabi-size  adc_clock_enable.elf 
-arm-none-eabi-objdump -h -S adc_clock_enable.elf  > "adc_clock_enable.list"
-   text	   data	    bss	    dec	    hex	filename
-    756	      0	   1568	   2324	    914	adc_clock_enable.elf
-Finished building: default.size.stdout
- 
-Finished building: adc_clock_enable.list
- 
-14:01:00 **** Incremental Build of configuration Debug for project adc_clock_enable ****
-make -j16 all 
-arm-none-eabi-size  adc_clock_enable.elf 
-   text	   data	    bss	    dec	    hex	filename
-    756	      0	   1568	   2324	    914	adc_clock_enable.elf
-Finished building: default.size.stdout
- 
-14:08:36 **** Incremental Build of configuration Debug for project adc_clock_enable ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c:22:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
-   22 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-      |    ^~~~~~~
-arm-none-eabi-gcc -o "adc_clock_enable.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc_clock_enable/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc_clock_enable.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adc_clock_enable.elf
- 
-arm-none-eabi-size  adc_clock_enable.elf 
-arm-none-eabi-objdump -h -S adc_clock_enable.elf  > "adc_clock_enable.list"
-   text	   data	    bss	    dec	    hex	filename
-    776	      0	   1568	   2344	    928	adc_clock_enable.elf
-Finished building: default.size.stdout
- 
-Finished building: adc_clock_enable.list
- 
-09:13:14 **** Build of configuration Debug for project hse_clock_enable ****
-make -j16 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc: error: unrecognized command-line option '-fcyclomatic-complexity'
-arm-none-eabi-gcc: error: unrecognized command-line option '-fcyclomatic-complexity'
-arm-none-eabi-gcc: error: unrecognized command-line option '-fcyclomatic-complexity'
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-make: *** Waiting for unfinished jobs....
-make: *** [Src/subdir.mk:25: Src/syscalls.o] Error 1
-make: *** [Src/subdir.mk:25: Src/sysmem.o] Error 1
-"make -j16 all" terminated with exit code 2. Build might be incomplete.
-09:13:32 **** Incremental Build of configuration Debug for project hse_clock_enable ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-../Src/main.c:22:2: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
-   22 | #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-      |  ^~~~~~~
-../Src/main.c: In function 'main':
-../Src/main.c:35:32: error: invalid operands to binary & (have 'uint32_t *' {aka 'long unsigned int *'} and 'int')
-   35 |         while (!(pRccCrRegAddr & (1 << 17))) {
-      |                                ^
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.c:3:10: fatal error: drivers/stmf407xx.h: No such file or directory
+    3 | #include "drivers/stmf407xx.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
 make: *** [Src/subdir.mk:25: Src/main.o] Error 1
 make: *** Waiting for unfinished jobs....
 "make -j16 all" terminated with exit code 2. Build might be incomplete.
-09:14:10 **** Incremental Build of configuration Debug for project hse_clock_enable ****
+12:41:21 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c:22:2: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
-   22 | #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-      |  ^~~~~~~
-arm-none-eabi-gcc -o "hse_clock_enable.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/hse_clock_enable/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hse_clock_enable.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: hse_clock_enable.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.c:3:10: fatal error: drivers/stmf407xx.h: No such file or directory
+    3 | #include "drivers/stmf407xx.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+12:41:41 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f4xx_drivers.elf
  
-arm-none-eabi-size  hse_clock_enable.elf 
-arm-none-eabi-objdump -h -S hse_clock_enable.elf  > "hse_clock_enable.list"
+arm-none-eabi-size  stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
    text	   data	    bss	    dec	    hex	filename
-    788	      0	   1568	   2356	    934	hse_clock_enable.elf
+    732	      0	   1568	   2300	    8fc	stm32f4xx_drivers.elf
 Finished building: default.size.stdout
  
-Finished building: hse_clock_enable.list
+Finished building: stm32f4xx_drivers.list
  
-09:14:27 **** Incremental Build of configuration Debug for project hse_clock_enable ****
+12:41:53 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j16 all 
-arm-none-eabi-size  hse_clock_enable.elf 
+arm-none-eabi-size  stm32f4xx_drivers.elf 
    text	   data	    bss	    dec	    hex	filename
-    788	      0	   1568	   2356	    934	hse_clock_enable.elf
+    732	      0	   1568	   2300	    8fc	stm32f4xx_drivers.elf
 Finished building: default.size.stdout
- 
-09:20:19 **** Incremental Build of configuration Debug for project hse_clock_enable ****
-make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c:22:2: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
-   22 | #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-      |  ^~~~~~~
-arm-none-eabi-gcc -o "hse_clock_enable.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/hse_clock_enable/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="hse_clock_enable.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: hse_clock_enable.elf
- 
-arm-none-eabi-size  hse_clock_enable.elf 
-arm-none-eabi-objdump -h -S hse_clock_enable.elf  > "hse_clock_enable.list"
-   text	   data	    bss	    dec	    hex	filename
-    788	      0	   1568	   2356	    934	hse_clock_enable.elf
-Finished building: default.size.stdout
- 
-Finished building: hse_clock_enable.list
  
