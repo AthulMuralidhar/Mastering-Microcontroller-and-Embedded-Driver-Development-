@@ -819,3 +819,76 @@ Command-line arguments:  -data /home/athul-muralidhar/Mastering-Microcontroller-
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2024-10-23 12:41:58.875
 !MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 16000000; div: 8
+
+!ENTRY com.wakatime.eclipse.plugin 4 2 2024-10-23 13:53:41.169
+!MESSAGE Problems occurred when invoking code from plug-in: "com.wakatime.eclipse.plugin".
+!STACK 0
+java.lang.NullPointerException: Cannot read field "debouncer" because the return value of "com.wakatime.eclipse.plugin.WakaTime.getDefault()" is null
+	at com.wakatime.eclipse.plugin.WakaTime$2.aboutToRun(WakaTime.java:234)
+	at org.eclipse.core.internal.jobs.JobListeners.sendEvent(JobListeners.java:153)
+	at org.eclipse.core.internal.jobs.JobListeners.sendEventsAsync(JobListeners.java:140)
+	at org.eclipse.core.internal.jobs.JobListeners.waitAndSendEvents(JobListeners.java:80)
+	at org.eclipse.core.internal.jobs.JobManager.startJob(JobManager.java:1775)
+	at org.eclipse.core.internal.jobs.WorkerPool.startJob(WorkerPool.java:244)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:58)
+
+!ENTRY com.wakatime.eclipse.plugin 4 2 2024-10-23 13:53:41.170
+!MESSAGE Problems occurred when invoking code from plug-in: "com.wakatime.eclipse.plugin".
+!STACK 0
+java.lang.NullPointerException: Cannot read field "debouncer" because the return value of "com.wakatime.eclipse.plugin.WakaTime.getDefault()" is null
+	at com.wakatime.eclipse.plugin.WakaTime$2.done(WakaTime.java:250)
+	at org.eclipse.core.internal.jobs.JobListeners.sendEvent(JobListeners.java:153)
+	at org.eclipse.core.internal.jobs.JobListeners.sendEventsAsync(JobListeners.java:140)
+	at org.eclipse.core.internal.jobs.JobListeners.waitAndSendEvents(JobListeners.java:80)
+	at org.eclipse.core.internal.jobs.JobManager.withWriteLock(JobManager.java:550)
+	at org.eclipse.core.internal.jobs.JobManager.endJob(JobManager.java:751)
+	at org.eclipse.core.internal.jobs.WorkerPool.endJob(WorkerPool.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:83)
+!SESSION 2024-10-24 12:10:54.420 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-24 12:10:58.569
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-24 12:10:58.570
+!MESSAGE Log4j2 initialized with config file /home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/.metadata/.log4j2.xml
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-24 12:11:02.114
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-24 12:11:03.393
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-24 12:11:05.244
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-10-24 12:12:25.181
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/wakatime/eclipse-wakatime/master/update-site/content.jar
+!SESSION 2024-10-24 13:43:58.205 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-10-24 13:43:59.411
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-24 13:44:02.534
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-24 13:44:02.535
+!MESSAGE Log4j2 initialized with config file /home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/.metadata/.log4j2.xml
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-24 13:44:06.053
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-24 13:44:08.310
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-10-24 13:45:42.434
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/wakatime/eclipse-wakatime/master/update-site/content.jar
