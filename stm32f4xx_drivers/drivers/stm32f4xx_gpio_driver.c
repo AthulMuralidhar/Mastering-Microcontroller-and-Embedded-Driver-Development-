@@ -5,10 +5,7 @@
  *      Author: athul-muralidhar
  */
 
-
 #include "stm32f4xx_gpio_driver.h"
-
-
 
 // peripheral clock
 /**
@@ -25,9 +22,55 @@
  * @note				Peripheral clock should be enabled before using the GPIO port
  */
 void GPIO_PClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnOrDi) {
+	if (EnOrDi == ENABLE) {
+		if (pGPIOx == GPIOA) {
+			GPIOA_PCLK_EN();
+		} else if (pGPIOx == GPIOB) {
+			GPIOB_PCLK_EN();
+		} else if (pGPIOx == GPIOC) {
+			GPIOC_PCLK_EN();
+		} else if (pGPIOx == GPIOD) {
+			GPIOD_PCLK_EN();
+		} else if (pGPIOx == GPIOE) {
+			GPIOE_PCLK_EN();
+		} else if (pGPIOx == GPIOF) {
+			GPIOF_PCLK_EN();
+		} else if (pGPIOx == GPIOG) {
+			GPIOG_PCLK_EN();
+		} else if (pGPIOx == GPIOH) {
+			GPIOH_PCLK_EN();
+		} else if (pGPIOx == GPIOI) {
+			GPIOI_PCLK_EN();
+		} else {
+			errorCode = ERR_INVALID_GPIO_PORT;
+		}
+	}
+
+	if (EnOrDi == DISABLE) {
+		if (pGPIOx == GPIOA) {
+			GPIOA_PCLK_DI();
+		} else if (pGPIOx == GPIOB) {
+			GPIOB_PCLK_DI();
+		} else if (pGPIOx == GPIOC) {
+			GPIOC_PCLK_DI();
+		} else if (pGPIOx == GPIOD) {
+			GPIOD_PCLK_DI();
+		} else if (pGPIOx == GPIOE) {
+			GPIOE_PCLK_DI();
+		} else if (pGPIOx == GPIOF) {
+			GPIOF_PCLK_DI();
+		} else if (pGPIOx == GPIOG) {
+			GPIOG_PCLK_DI();
+		} else if (pGPIOx == GPIOH) {
+			GPIOH_PCLK_DI();
+		} else if (pGPIOx == GPIOI) {
+			GPIOI_PCLK_DI();
+		} else {
+			errorCode = ERR_INVALID_GPIO_PORT;
+		}
+	}
 
 }
-
 
 // initialization and de-initialization
 /**
@@ -42,7 +85,13 @@ void GPIO_PClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnOrDi) {
  *
  * @note					This function should be called before using the GPIO pin
  */
-void GPIO_Init(GPIO_Handle_t  *pGPIOHandle);
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle){
+	// 1. configure the mode of the pin
+	// 2. configure the speed
+	// 3. configure the pull up pull down
+	// 4. configure the output type
+	// 5. configure the alternate functionality
+}
 
 /**
  * @fn					GPIO_DeInit
@@ -104,7 +153,7 @@ uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
  * 						(bit 0 for pin 0, bit 1 for pin 1, etc.)
  */
 void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t value) {
-    // Function implementation goes here
+	// Function implementation goes here
 }
 
 /**
@@ -121,8 +170,9 @@ void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t value) {
  *
  * @note				Ensure that the specified pin is configured as an output before calling this function
  */
-void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t value) {
-    // Function implementation goes here
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber,
+		uint8_t value) {
+	// Function implementation goes here
 }
 
 /**
@@ -139,9 +189,8 @@ void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t val
  * @note				This function changes the state of the pin from high to low or low to high
  */
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber) {
-    // Function implementation goes here
+	// Function implementation goes here
 }
-
 
 // interrupt handling and configuration
 /**
@@ -159,7 +208,7 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber) {
  * 							the specified GPIO interrupt and sets its priority
  */
 void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnOrDi) {
-    // Function implementation goes here
+	// Function implementation goes here
 }
 
 /**
@@ -176,5 +225,5 @@ void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnOrDi) {
  * 							any necessary interrupt handling operations.
  */
 void GPIO_IRQHandler(uint8_t PinNumber) {
-    // Function implementation goes here
+	// Function implementation goes here
 }

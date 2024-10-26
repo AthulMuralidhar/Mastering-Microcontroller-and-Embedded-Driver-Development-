@@ -276,17 +276,34 @@ Discarded input sections
  .text          0x00000000        0x0 ./drivers/stm32f4xx_gpio_driver.o
  .data          0x00000000        0x0 ./drivers/stm32f4xx_gpio_driver.o
  .bss           0x00000000        0x0 ./drivers/stm32f4xx_gpio_driver.o
- .debug_info    0x00000000       0x69 ./drivers/stm32f4xx_gpio_driver.o
- .debug_abbrev  0x00000000       0x28 ./drivers/stm32f4xx_gpio_driver.o
- .debug_aranges
+ .bss.errorCode
+                0x00000000        0x4 ./drivers/stm32f4xx_gpio_driver.o
+ .text.GPIO_PClockControl
+                0x00000000      0x1ec ./drivers/stm32f4xx_gpio_driver.o
+ .text.GPIO_WriteToOutputPort
                 0x00000000       0x18 ./drivers/stm32f4xx_gpio_driver.o
- .debug_macro   0x00000000       0x33 ./drivers/stm32f4xx_gpio_driver.o
+ .text.GPIO_WriteToOutputPin
+                0x00000000       0x1c ./drivers/stm32f4xx_gpio_driver.o
+ .text.GPIO_ToggleOutputPin
+                0x00000000       0x18 ./drivers/stm32f4xx_gpio_driver.o
+ .text.GPIO_IRQConfig
+                0x00000000       0x1e ./drivers/stm32f4xx_gpio_driver.o
+ .text.GPIO_IRQHandler
+                0x00000000       0x16 ./drivers/stm32f4xx_gpio_driver.o
+ .debug_info    0x00000000      0x3fd ./drivers/stm32f4xx_gpio_driver.o
+ .debug_abbrev  0x00000000       0xef ./drivers/stm32f4xx_gpio_driver.o
+ .debug_aranges
+                0x00000000       0x48 ./drivers/stm32f4xx_gpio_driver.o
+ .debug_rnglists
+                0x00000000       0x32 ./drivers/stm32f4xx_gpio_driver.o
+ .debug_macro   0x00000000       0x39 ./drivers/stm32f4xx_gpio_driver.o
  .debug_macro   0x00000000      0xae4 ./drivers/stm32f4xx_gpio_driver.o
  .debug_macro   0x00000000      0x34e ./drivers/stm32f4xx_gpio_driver.o
- .debug_macro   0x00000000      0x1e0 ./drivers/stm32f4xx_gpio_driver.o
- .debug_line    0x00000000       0xa3 ./drivers/stm32f4xx_gpio_driver.o
- .debug_str     0x00000000     0x45d7 ./drivers/stm32f4xx_gpio_driver.o
+ .debug_macro   0x00000000      0x226 ./drivers/stm32f4xx_gpio_driver.o
+ .debug_line    0x00000000      0x1d1 ./drivers/stm32f4xx_gpio_driver.o
+ .debug_str     0x00000000     0x49bd ./drivers/stm32f4xx_gpio_driver.o
  .comment       0x00000000       0x27 ./drivers/stm32f4xx_gpio_driver.o
+ .debug_frame   0x00000000      0x100 ./drivers/stm32f4xx_gpio_driver.o
  .ARM.attributes
                 0x00000000       0x34 ./drivers/stm32f4xx_gpio_driver.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
@@ -959,22 +976,22 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/libgcc.a
  .debug_rnglists
                 0x00000013       0x19 ./Startup/startup_stm32f407vgtx.o
 
-.debug_macro    0x00000000     0x103b
+.debug_macro    0x00000000     0x1081
  .debug_macro   0x00000000       0x23 ./Src/main.o
  .debug_macro   0x00000023      0xae4 ./Src/main.o
  .debug_macro   0x00000b07      0x34e ./Src/main.o
- .debug_macro   0x00000e55      0x1e6 ./Src/main.o
+ .debug_macro   0x00000e55      0x22c ./Src/main.o
 
 .debug_line     0x00000000      0x289
  .debug_line    0x00000000       0xf0 ./Src/main.o
  .debug_line    0x000000f0       0x7b ./Startup/startup_stm32f407vgtx.o
  .debug_line    0x0000016b      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
 
-.debug_str      0x00000000     0x45f8
- .debug_str     0x00000000     0x45f8 ./Src/main.o
-                               0x45ad (size before relaxing)
- .debug_str     0x000045f8       0xa6 ./Startup/startup_stm32f407vgtx.o
- .debug_str     0x000045f8      0x1fa /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+.debug_str      0x00000000     0x47b9
+ .debug_str     0x00000000     0x47b9 ./Src/main.o
+                               0x476e (size before relaxing)
+ .debug_str     0x000047b9       0xa6 ./Startup/startup_stm32f407vgtx.o
+ .debug_str     0x000047b9      0x1fa /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
 
 .debug_frame    0x00000000       0x54
  .debug_frame   0x00000000       0x28 ./Src/main.o

@@ -18,8 +18,6 @@
 #define GPIO_PIN_SET		SET
 #define GPIO_PIN_RESET 		RESET
 
-
-
 // base addresses of FLASH and SRAM memories
 #define FLASH_BASE_ADDR 							0x08000000U
 #define SRAM1_BASE_ADDR								0x20000000U  						// 112 Kb
@@ -43,6 +41,7 @@
 #define GPIOE_BASE_ADDR								(AHB1_PERIPHERAL_BASE_ADDR + 0x1000)
 #define GPIOF_BASE_ADDR								(AHB1_PERIPHERAL_BASE_ADDR + 0x1400)
 #define GPIOG_BASE_ADDR								(AHB1_PERIPHERAL_BASE_ADDR + 0x1800)
+#define GPIOH_BASE_ADDR								(AHB1_PERIPHERAL_BASE_ADDR + 0x1C00)
 #define GPIOI_BASE_ADDR								(AHB1_PERIPHERAL_BASE_ADDR + 0x2000)
 #define GPIOJ_BASE_ADDR								(AHB1_PERIPHERAL_BASE_ADDR + 0x2400)
 #define GPIOK_BASE_ADDR								(AHB1_PERIPHERAL_BASE_ADDR + 0x2800)
@@ -65,8 +64,6 @@
 #define SPI1_BASE_ADDR								(APB2_PERIPHERAL_BASE_ADDR + 0x3000)
 #define SYSCFG_BASE_ADDR							(APB2_PERIPHERAL_BASE_ADDR + 0x3800)
 #define EXTI_BASE_ADDR								(APB2_PERIPHERAL_BASE_ADDR + 0x3C00)
-
-
 
 // =====================================  Peripheral register definition structures ====================================================================================
 
@@ -116,7 +113,6 @@ typedef struct {
 	volatile uint32_t PLLI2SCFGR;			// Offset 0x84
 } RCC_RegDef_t;
 
-
 // peripheral definitions
 #define GPIOA   	((GPIO_RegDef_t*)GPIOA_BASE_ADDR)
 #define GPIOB   	((GPIO_RegDef_t*)GPIOB_BASE_ADDR)
@@ -141,19 +137,27 @@ typedef struct {
 #define GPIOG_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 6))
 #define GPIOH_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 7))
 #define GPIOI_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 8))
+// clock disable macros for GPIOx Peripherals
+#define GPIOA_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 0))
+#define GPIOB_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 1))
+#define GPIOC_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 2))
+#define GPIOD_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 3))
+#define GPIOE_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 4))
+#define GPIOF_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 5))
+#define GPIOG_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 6))
+#define GPIOH_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 7))
+#define GPIOI_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 8))
 
 // clock enable macros for I2Cx Peripherals
 #define I2C1_PCLK_EN()			(RCC->APB1ENR |=  (1 << 21))
 #define I2C2_PCLK_EN()			(RCC->APB1ENR |=  (1 << 22))
 #define I2C3_PCLK_EN()			(RCC->APB1ENR |=  (1 << 23))
 
-
 // clock enable macros for SPIx Peripherals
 #define SPI1_PCLK_EN()			(RCC->APB2ENR |=  (1 << 12))
 #define SPI2_PCLK_EN()			(RCC->APB1ENR |=  (1 << 14))
 #define SPI3_PCLK_EN()			(RCC->APB1ENR |=  (1 << 15))
 #define SPI4_PCLK_EN()			(RCC->APB2ENR |=  (1 << 13))
-
 
 // clock enable macros for USARTx Peripherals
 #define USART1_PCLK_EN()			(RCC->APB2ENR |=  (1 << 4))
@@ -163,9 +167,7 @@ typedef struct {
 #define UART5_PCLK_EN()				(RCC->APB1ENR |=  (1 << 20))
 #define USART6_PCLK_EN()			(RCC->APB2ENR |=  (1 << 5))
 
-
 // system config clock enable
 #define SYSCFG_PCLK_EN()			(RCC->APB2ENR |=  (1 << 14))
-
 
 #endif /* STMF407XX_H_ */
