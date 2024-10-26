@@ -10,6 +10,16 @@
 
 #include<stdint.h>
 
+// generic macros
+#define ENABLE				1
+#define DISABLE				0
+#define SET					ENABLE
+#define RESET				DISABLE
+#define GPIO_PIN_SET		SET
+#define GPIO_PIN_RESET 		RESET
+
+
+
 // base addresses of FLASH and SRAM memories
 #define FLASH_BASE_ADDR 							0x08000000U
 #define SRAM1_BASE_ADDR								0x20000000U  						// 112 Kb
@@ -154,18 +164,8 @@ typedef struct {
 #define USART6_PCLK_EN()			(RCC->APB2ENR |=  (1 << 5))
 
 
-// sys cfg clock
+// system config clock enable
 #define SYSCFG_PCLK_EN()			(RCC->APB2ENR |=  (1 << 14))
-
-
-
-
-
-
-
-
-
-
 
 
 #endif /* STMF407XX_H_ */

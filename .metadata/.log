@@ -968,3 +968,42 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-25 16:45:10.501
 !MESSAGE No .vrapperrc or _vrapperrc found.
+!SESSION 2024-10-26 09:07:47.087 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-26 09:07:53.845
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-26 09:07:53.846
+!MESSAGE Log4j2 initialized with config file /home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/.metadata/.log4j2.xml
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-26 09:07:57.616
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-26 09:08:00.594
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-26 09:09:19.214
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-10-26 09:09:45.107
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/wakatime/eclipse-wakatime/master/update-site/content.jar
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-26 09:13:40.608
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-26 09:13:44.379
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-26 09:13:45.622
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-26 09:13:52.096
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-26 09:21:53.533
+!MESSAGE No .vrapperrc or _vrapperrc found.
