@@ -1,5 +1,5 @@
-"./Src/main.o"
+"./Src/led_togle.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
 "./Startup/startup_stm32f407vgtx.o"
-"./drivers/stm32f4xx_gpio_driver.o"
+"./drivers/stm32f407xx_gpio_driver.o"
