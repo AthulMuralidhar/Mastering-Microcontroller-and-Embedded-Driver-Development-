@@ -65,9 +65,95 @@
 #define SYSCFG_BASE_ADDR							(APB2_PERIPHERAL_BASE_ADDR + 0x3800)
 #define EXTI_BASE_ADDR								(APB2_PERIPHERAL_BASE_ADDR + 0x3C00)
 
+// peripheral definitions
+#define GPIOA   	((GPIO_RegDef_t*)GPIOA_BASE_ADDR)
+#define GPIOB   	((GPIO_RegDef_t*)GPIOB_BASE_ADDR)
+#define GPIOC	   	((GPIO_RegDef_t*)GPIOC_BASE_ADDR)
+#define GPIOD   	((GPIO_RegDef_t*)GPIOD_BASE_ADDR)
+#define GPIOE   	((GPIO_RegDef_t*)GPIOE_BASE_ADDR)
+#define GPIOF   	((GPIO_RegDef_t*)GPIOF_BASE_ADDR)
+#define GPIOG   	((GPIO_RegDef_t*)GPIOG_BASE_ADDR)
+#define GPIOH   	((GPIO_RegDef_t*)GPIOH_BASE_ADDR)
+#define GPIOI   	((GPIO_RegDef_t*)GPIOI_BASE_ADDR)
+
+// RCC
+#define RCC			((RCC_RegDef_t*)RCC_BASE_ADDR)
+
+// EXTI
+#define EXTI		((EXTI_RegDef_t *)EXTI_BASE_ADDR)
+
+// SYSCFG
+#define SYSCFG		((SYSCFG_RegDef_t *)SYSCFG_BASE_ADDR)
+
+
+// clock enable macros for GPIOx Peripherals
+#define GPIOA_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 0))
+#define GPIOB_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 1))
+#define GPIOC_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 2))
+#define GPIOD_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 3))
+#define GPIOE_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 4))
+#define GPIOF_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 5))
+#define GPIOG_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 6))
+#define GPIOH_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 7))
+#define GPIOI_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 8))
+// clock disable macros for GPIOx Peripherals
+#define GPIOA_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 0))
+#define GPIOB_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 1))
+#define GPIOC_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 2))
+#define GPIOD_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 3))
+#define GPIOE_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 4))
+#define GPIOF_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 5))
+#define GPIOG_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 6))
+#define GPIOH_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 7))
+#define GPIOI_PCLK_DI()				(RCC->AHB1ENR &=  ~(1 << 8))
+// GPIOx register reset
+#define GPIOA_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 0)); (RCC->AHB1RSTR &=  ~(1 << 0)); }while(0)
+#define GPIOB_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 1)); (RCC->AHB1RSTR &=  ~(1 << 1)); }while(0)
+#define GPIOC_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 2)); (RCC->AHB1RSTR &=  ~(1 << 2)); }while(0)
+#define GPIOD_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 3)); (RCC->AHB1RSTR &=  ~(1 << 3)); }while(0)
+#define GPIOE_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 4)); (RCC->AHB1RSTR &=  ~(1 << 4)); }while(0)
+#define GPIOF_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 5)); (RCC->AHB1RSTR &=  ~(1 << 5)); }while(0)
+#define GPIOG_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 6)); (RCC->AHB1RSTR &=  ~(1 << 6)); }while(0)
+#define GPIOH_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 7)); (RCC->AHB1RSTR &=  ~(1 << 7)); }while(0)
+#define GPIOI_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 8)); (RCC->AHB1RSTR &=  ~(1 << 8)); }while(0)
+
+#define GPIO_BASE_ADDR_TO_EXTI_CODE(x) ((x) == GPIOA ? 0 : \
+                                        (x) == GPIOB ? 1 : \
+                                        (x) == GPIOC ? 2 : \
+                                        (x) == GPIOD ? 3 : \
+                                        (x) == GPIOE ? 4 : \
+                                        (x) == GPIOF ? 5 : \
+                                        (x) == GPIOG ? 6 : \
+                                        (x) == GPIOH ? 7 : \
+                                        (x) == GPIOI ? 8 : -1)
+
+// clock enable macros for I2Cx Peripherals
+#define I2C1_PCLK_EN()				(RCC->APB1ENR |=  (1 << 21))
+#define I2C2_PCLK_EN()				(RCC->APB1ENR |=  (1 << 22))
+#define I2C3_PCLK_EN()				(RCC->APB1ENR |=  (1 << 23))
+
+// clock enable macros for SPIx Peripherals
+#define SPI1_PCLK_EN()				(RCC->APB2ENR |=  (1 << 12))
+#define SPI2_PCLK_EN()				(RCC->APB1ENR |=  (1 << 14))
+#define SPI3_PCLK_EN()				(RCC->APB1ENR |=  (1 << 15))
+#define SPI4_PCLK_EN()				(RCC->APB2ENR |=  (1 << 13))
+
+// clock enable macros for USARTx Peripherals
+#define USART1_PCLK_EN()			(RCC->APB2ENR |=  (1 << 4))
+#define USART2_PCLK_EN()			(RCC->APB1ENR |=  (1 << 17))
+#define USART3_PCLK_EN()			(RCC->APB1ENR |=  (1 << 16))
+#define UART4_PCLK_EN()				(RCC->APB1ENR |=  (1 << 19))
+#define UART5_PCLK_EN()				(RCC->APB1ENR |=  (1 << 20))
+#define USART6_PCLK_EN()			(RCC->APB2ENR |=  (1 << 5))
+
+// system config clock enable
+#define SYSCFG_PCLK_EN()			(RCC->APB2ENR |=  (1 << 14))
+
+
+
 // =====================================  Peripheral register definition structures ====================================================================================
 
-// general registers definition for GPIOS
+// Peripheral register definition structure for GPIOS
 typedef struct {
 	volatile uint32_t MODER;				// Offset 0x00
 	volatile uint32_t OTYPER;				// Offset 0x04
@@ -80,6 +166,7 @@ typedef struct {
 	volatile uint32_t AFR[2];				// Offset 0x20-0x24
 } GPIO_RegDef_t;
 
+// Peripheral register definition structure for RCC
 typedef struct {
 	volatile uint32_t CR;					// Offset 0x00
 	volatile uint32_t PLLCFGR;				// Offset 0x04
@@ -113,73 +200,23 @@ typedef struct {
 	volatile uint32_t PLLI2SCFGR;			// Offset 0x84
 } RCC_RegDef_t;
 
-// peripheral definitions
-#define GPIOA   	((GPIO_RegDef_t*)GPIOA_BASE_ADDR)
-#define GPIOB   	((GPIO_RegDef_t*)GPIOB_BASE_ADDR)
-#define GPIOC	   	((GPIO_RegDef_t*)GPIOC_BASE_ADDR)
-#define GPIOD   	((GPIO_RegDef_t*)GPIOD_BASE_ADDR)
-#define GPIOE   	((GPIO_RegDef_t*)GPIOE_BASE_ADDR)
-#define GPIOF   	((GPIO_RegDef_t*)GPIOF_BASE_ADDR)
-#define GPIOG   	((GPIO_RegDef_t*)GPIOG_BASE_ADDR)
-#define GPIOH   	((GPIO_RegDef_t*)GPIOH_BASE_ADDR)
-#define GPIOI   	((GPIO_RegDef_t*)GPIOI_BASE_ADDR)
+// Peripheral register definition structure for EXTI
+typedef struct {
+	volatile uint32_t IMR;				// Offset 0x00
+	volatile uint32_t EMR;				// Offset 0x04
+	volatile uint32_t RTSR;				// Offset 0x08
+	volatile uint32_t FTSR;				// Offset 0x0C
+	volatile uint32_t SWIER;			// Offset 0x10
+	volatile uint32_t PR;				// Offset 0x14
+} EXTI_RegDef_t;
 
-// RCC
-#define RCC			((RCC_RegDef_t*)RCC_BASE_ADDR)
+// Peripheral register definition structure for SYSCFG
+typedef struct {
+	volatile uint32_t MEMRMP;				// Offset 0x00
+	volatile uint32_t PMC;					// Offset 0x04
+	volatile uint32_t EXTICR[4];			// Offset 0x08-0x14
+	volatile uint32_t CMPCR;				// Offset 0x20
+} SYSCFG_RegDef_t;
 
-// clock enable macros for GPIOx Peripherals
-#define GPIOA_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 0))
-#define GPIOB_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 1))
-#define GPIOC_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 2))
-#define GPIOD_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 3))
-#define GPIOE_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 4))
-#define GPIOF_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 5))
-#define GPIOG_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 6))
-#define GPIOH_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 7))
-#define GPIOI_PCLK_EN()			(RCC->AHB1ENR |=  (1 << 8))
-// clock disable macros for GPIOx Peripherals
-#define GPIOA_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 0))
-#define GPIOB_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 1))
-#define GPIOC_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 2))
-#define GPIOD_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 3))
-#define GPIOE_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 4))
-#define GPIOF_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 5))
-#define GPIOG_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 6))
-#define GPIOH_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 7))
-#define GPIOI_PCLK_DI()			(RCC->AHB1ENR &=  ~(1 << 8))
-// GPIOx register reset
-#define GPIOA_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 0)); (RCC->AHB1RSTR &=  ~(1 << 0)); }while(0)
-#define GPIOB_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 1)); (RCC->AHB1RSTR &=  ~(1 << 1)); }while(0)
-#define GPIOC_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 2)); (RCC->AHB1RSTR &=  ~(1 << 2)); }while(0)
-#define GPIOD_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 3)); (RCC->AHB1RSTR &=  ~(1 << 3)); }while(0)
-#define GPIOE_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 4)); (RCC->AHB1RSTR &=  ~(1 << 4)); }while(0)
-#define GPIOF_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 5)); (RCC->AHB1RSTR &=  ~(1 << 5)); }while(0)
-#define GPIOG_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 6)); (RCC->AHB1RSTR &=  ~(1 << 6)); }while(0)
-#define GPIOH_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 7)); (RCC->AHB1RSTR &=  ~(1 << 7)); }while(0)
-#define GPIOI_REG_RESET()			do{ (RCC->AHB1RSTR |= (1 << 8)); (RCC->AHB1RSTR &=  ~(1 << 8)); }while(0)
-
-
-
-// clock enable macros for I2Cx Peripherals
-#define I2C1_PCLK_EN()			(RCC->APB1ENR |=  (1 << 21))
-#define I2C2_PCLK_EN()			(RCC->APB1ENR |=  (1 << 22))
-#define I2C3_PCLK_EN()			(RCC->APB1ENR |=  (1 << 23))
-
-// clock enable macros for SPIx Peripherals
-#define SPI1_PCLK_EN()			(RCC->APB2ENR |=  (1 << 12))
-#define SPI2_PCLK_EN()			(RCC->APB1ENR |=  (1 << 14))
-#define SPI3_PCLK_EN()			(RCC->APB1ENR |=  (1 << 15))
-#define SPI4_PCLK_EN()			(RCC->APB2ENR |=  (1 << 13))
-
-// clock enable macros for USARTx Peripherals
-#define USART1_PCLK_EN()			(RCC->APB2ENR |=  (1 << 4))
-#define USART2_PCLK_EN()			(RCC->APB1ENR |=  (1 << 17))
-#define USART3_PCLK_EN()			(RCC->APB1ENR |=  (1 << 16))
-#define UART4_PCLK_EN()				(RCC->APB1ENR |=  (1 << 19))
-#define UART5_PCLK_EN()				(RCC->APB1ENR |=  (1 << 20))
-#define USART6_PCLK_EN()			(RCC->APB2ENR |=  (1 << 5))
-
-// system config clock enable
-#define SYSCFG_PCLK_EN()			(RCC->APB2ENR |=  (1 << 14))
 
 #endif /* STM32F407XX_H_ */

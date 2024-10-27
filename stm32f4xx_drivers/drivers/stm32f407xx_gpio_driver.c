@@ -89,42 +89,71 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle) {
 		// non interrupt mode
 		// For example, if you're configuring pin 5, the mode bits would be shifted left by 10 positions (2 * 5),
 		// placing them in bits 10 and 11 of the register.
-		tempRegister = (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+		tempRegister = (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode
+				<< (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 		// clear
-		pGPIOHandle->pGPIOx->MODER &= ~(0x3 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);   // 0x3 == 11
+		pGPIOHandle->pGPIOx->MODER &= ~(0x3
+				<< pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);   // 0x3 == 11
 		// store
 		pGPIOHandle->pGPIOx->MODER |= tempRegister;
 
 	} else {
 		// interrupt mode
-		// TODO
+		if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_FT) {
+			EXTI->FTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+			EXTI->RTSR &= ~(1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);   // clear RTSR
+
+		} else if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RT) {
+			EXTI->RTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+			EXTI->FTSR &= ~(1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);   // clear FTSR
+
+		} else if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RFT) {
+			EXTI->RTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+			EXTI->FTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+
+		}
+
+		// 2.configure the GPIO port selection in SYSCFG_EXTICR
+		uint8_t extiRegisterSet = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;   // we choose the index for the array with this, so SYSCFG.EXTICR[0] == EXTICR1
+		uint8_t extiBitPosition = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 4;   // this tells us about the position within each register
+
+		uint8_t portCode = GPIO_BASE_ADDR_TO_EXTI_CODE(pGPIOHandle->pGPIOx);
+		SYSCFG->EXTICR[extiRegisterSet] = portCode << (extiBitPosition * 4);
+
+		// 3.enable the EXTI interrupt delivery using IMR
+		EXTI->IMR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 	}
 
 	// reset temporary register
 	tempRegister = 0;
 	// 2. configure the speed
-	tempRegister = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	tempRegister = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed
+			<< (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 	// clear
-	pGPIOHandle->pGPIOx->OSPEEDR &= ~(0x3 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);   // 0x3 == 0b11
+	pGPIOHandle->pGPIOx->OSPEEDR &= ~(0x3
+			<< pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);   // 0x3 == 0b11
 	// store
 	pGPIOHandle->pGPIOx->OSPEEDR |= tempRegister;
-
 
 	// reset temporary register
 	tempRegister = 0;
 	// 3. configure the pull up pull down
-	tempRegister = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	tempRegister = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl
+			<< (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 	// clear
-	pGPIOHandle->pGPIOx->PUPDR &= ~(0x3 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);   // 0x3 == 0b11
+	pGPIOHandle->pGPIOx->PUPDR &= ~(0x3
+			<< pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);   // 0x3 == 0b11
 	// store
 	pGPIOHandle->pGPIOx->PUPDR |= tempRegister;
 
 	// reset temporary register
 	tempRegister = 0;
 	// 4. configure the output type
-	tempRegister = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOpType << (1 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));   // no 2 bits here only 16bits is used
+	tempRegister = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOpType
+			<< (1 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)); // no 2 bits here only 16bits is used
 	// clear
-	pGPIOHandle->pGPIOx->OTYPER &= ~(1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+	pGPIOHandle->pGPIOx->OTYPER &= ~(1
+			<< pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 	// store
 	pGPIOHandle->pGPIOx->OTYPER |= tempRegister;
 
@@ -132,17 +161,17 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle) {
 	tempRegister = 0;
 	// 5. configure the alternate functionality
 	if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALT_FN) {
-		uint8_t lowOrHigh = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 8;    // if this is 0, then low, - this decides if it is AFR low or AFR high register
-		uint8_t bitPosition = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 8;   // this decides where the pin registers fall within low or high register
+		uint8_t lowOrHigh = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 8; // if this is 0, then low, - this decides if it is AFR low or AFR high register
+		uint8_t bitPosition = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 8; // this decides where the pin registers fall within low or high register
 
 		// clear
-		pGPIOHandle->pGPIOx->AFR[lowOrHigh]  &=  ~(0xF << (4* bitPosition));    // 0xF == 0b1111
+		pGPIOHandle->pGPIOx->AFR[lowOrHigh] &= ~(0xF << (4 * bitPosition)); // 0xF == 0b1111
 		// store
-		pGPIOHandle->pGPIOx->AFR[lowOrHigh]  |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode << (4 * bitPosition));
+		pGPIOHandle->pGPIOx->AFR[lowOrHigh] |=
+				(pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode
+						<< (4 * bitPosition));
 
 	}
-
-
 
 }
 
@@ -194,13 +223,12 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOx) {
  *
  * @note				Ensure that the specified pin is configured as an input before calling this function
  */
-uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber){
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber) {
 	uint8_t readValue;
 
-	readValue = (uint8_t)((pGPIOx->IDR >> PinNumber) & 0x00000001);    // first shift the register to the 0th position, then do an AND and read the last bit
+	readValue = (uint8_t) ((pGPIOx->IDR >> PinNumber) & 0x00000001); // first shift the register to the 0th position, then do an AND and read the last bit
 	return readValue;
 }
-
 
 /**
  * @fn					GPIO_ReadFromInputPort
@@ -218,7 +246,7 @@ uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber){
 uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx) {
 	uint16_t readValue;
 
-	readValue = (uint16_t)(pGPIOx->IDR);
+	readValue = (uint16_t) (pGPIOx->IDR);
 	return readValue;
 }
 
@@ -258,12 +286,12 @@ void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t value) {
 void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber,
 		uint8_t value) {
 
-if (value == GPIO_PIN_SET) {
-	pGPIOx->ODR |= (1 << PinNumber);
-} else  {
-	// write 0
-	pGPIOx->ODR &= ~(1 << PinNumber);
-}
+	if (value == GPIO_PIN_SET) {
+		pGPIOx->ODR |= (1 << PinNumber);
+	} else {
+		// write 0
+		pGPIOx->ODR &= ~(1 << PinNumber);
+	}
 
 }
 
