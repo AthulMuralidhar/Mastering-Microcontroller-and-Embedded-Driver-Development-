@@ -315,24 +315,75 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber) {
 	pGPIOx->ODR ^= (1 << PinNumber);
 }
 
-// interrupt handling and configuration
 /**
- * @fn						GPIO_IRQConfig
+ * @fn                  GPIO_IRQInterruptConfig
  *
- * @brief					Configures the interrupt for a GPIO pin
+ * @brief               Configures the interrupt for a GPIO pin in the NVIC (Nested Vectored Interrupt Controller)
  *
- * @param[in] IRQNumber	  	The IRQ (Interrupt Request) number for the GPIO pin
- * @param[in] IRQPriority 	The priority of the interrupt (0-255, with 0 being the highest priority)
- * @param[in] EnOrDi	  	ENABLE or DISABLE macros to enable or disable the interrupt
+ * @param[in] IRQNumber The IRQ (Interrupt Request) number for the GPIO pin (0-95)
+ * @param[in] EnOrDi    ENABLE or DISABLE macros to enable or disable the interrupt
  *
- * @return					none
+ * @return              none
  *
- * @note					This function configures the interrupt controller to enable or disable
- * 							the specified GPIO interrupt and sets its priority
+ * @note                This function enables or disables the specified GPIO interrupt in the NVIC.
+ *                      It uses the appropriate NVIC_ISERx (Interrupt Set-Enable Register) to enable
+ *                      or NVIC_ICERx (Interrupt Clear-Enable Register) to disable the interrupt.
  */
-void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnOrDi) {
-	// Function implementation goes here
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnOrDi) {
+    if (EnOrDi == ENABLE) {
+        if (IRQNumber <= 31) {
+            // ISER0 register
+            *NVIC_ISER0 |= (1 << IRQNumber);
+        } else if (IRQNumber > 31 && IRQNumber < 64) {
+            // ISER1 register
+            *NVIC_ISER1 |= (1 << (IRQNumber % 32));
+        } else if (IRQNumber >= 64 && IRQNumber < 96) {
+            // ISER2 register
+            *NVIC_ISER2 |= (1 << (IRQNumber % 32));
+        }
+    } else if (EnOrDi == DISABLE) {
+        if (IRQNumber <= 31) {
+            // ICER0 register
+            *NVIC_ICER0 |= (1 << IRQNumber);
+        } else if (IRQNumber > 31 && IRQNumber < 64) {
+            // ICER1 register
+            *NVIC_ICER1 |= (1 << (IRQNumber % 32));
+        } else if (IRQNumber >= 64 && IRQNumber < 96) {
+            // ICER2 register
+            *NVIC_ICER2 |= (1 << (IRQNumber % 32));
+        }
+    }
 }
+
+/**
+ * @fn                  GPIO_IRQPriorityConfig
+ *
+ * @brief               Configures the priority of a GPIO interrupt in the NVIC
+ *
+ * @param[in] IRQNumber The IRQ (Interrupt Request) number for the GPIO pin (0-95)
+ * @param[in] IRQPriority The priority of the interrupt (0-255, with 0 being the highest priority)
+ *
+ * @return              none
+ *
+ * @note                This function sets the priority of the specified GPIO interrupt in the NVIC.
+ *                      It calculates the appropriate Interrupt Priority Register (IPR) and applies
+ *                      the priority value to the correct bit field within that register.
+ */
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority) {
+    // Calculate which IPR register to use
+    uint64_t iprx = IRQNumber / 4;
+
+    // Calculate which section of the IPR register to use
+    uint64_t iprx_section = IRQNumber % 4;
+
+    // Calculate the shift amount based on the section and number of priority bits implemented
+    uint64_t shift_amount = (8 * iprx_section) + (8 - NUM_PR_BITS_IMPLEMENTED);
+
+    // Set the priority in the appropriate IPR register
+    *(NVIC_IPR_BASE_ADDR + (iprx * 4)) |= (IRQPriority << shift_amount);
+}
+
+
 
 /**
  * @fn						GPIO_IRQHandler

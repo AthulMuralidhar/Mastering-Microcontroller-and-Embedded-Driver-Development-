@@ -1195,3 +1195,33 @@ java.lang.NullPointerException: Cannot read field "debouncer" because the return
 	at org.eclipse.core.internal.jobs.JobManager.endJob(JobManager.java:751)
 	at org.eclipse.core.internal.jobs.WorkerPool.endJob(WorkerPool.java:117)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:83)
+!SESSION 2024-10-28 06:51:03.442 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-28 06:51:07.263
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-28 06:51:07.264
+!MESSAGE Log4j2 initialized with config file /home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/.metadata/.log4j2.xml
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-28 06:51:10.191
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-28 06:51:11.659
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-28 06:51:21.305
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2024-10-28 06:52:25.045
+!MESSAGE Server returned lastModified <= 0 for https://raw.githubusercontent.com/wakatime/eclipse-wakatime/master/update-site/content.jar
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-28 06:58:59.285
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-10-28 07:51:52.034
+!MESSAGE No .vrapperrc or _vrapperrc found.
