@@ -10,15 +10,22 @@
 
 #include<stdint.h>
 
-
 // ============================================== Processor specific details ======================================================================
+
+// IRQ numbers for peripherals - this is the position in the vector table
+#define IRQ_NO_EXTI0			6
+#define IRQ_NO_EXTI1			7
+#define IRQ_NO_EXTI2			8
+#define IRQ_NO_EXTI3			9
+#define IRQ_NO_EXTI4			10
+#define IRQ_NO_EXTI9_5			23
+#define IRQ_NO_EXTI_10			40
 
 // ARM Cortex Mx processors NVIC ISERx register addresses
 #define NVIC_ISER0		((volatile uint32_t*)0xE000E100)
 #define NVIC_ISER1		((volatile uint32_t*)0xE000E104)
 #define NVIC_ISER2		((volatile uint32_t*)0xE000E108)
 #define NVIC_ISER3		((volatile uint32_t*)0xE000E10C)
-
 
 // ARM Cortex Mx processors NVIC ICERx register addresses
 #define NVIC_ICER0		((volatile uint32_t*)0XE000E180)
@@ -29,8 +36,12 @@
 // ARM Cortex Mx processors NVIC ICERx register base address
 #define NVIC_IPR_BASE_ADDR		((volatile uint32_t*)0xE000E400)
 
-#define  NUM_PR_BITS_IMPLIMENTED				4
+#define  NUM_PR_BITS_IMPLEMENTED				4
 
+// IRQ priorities levels
+#define NVIC_IRQ_PRIO0		0
+// TODO
+#define NVIC_IRQ_PRIO15		15
 
 // ========================================================= Vendor specific details =====================================================================
 // generic macros
@@ -108,7 +119,6 @@
 // SYSCFG
 #define SYSCFG		((SYSCFG_RegDef_t *)SYSCFG_BASE_ADDR)
 
-
 // clock enable macros for GPIOx Peripherals
 #define GPIOA_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 0))
 #define GPIOB_PCLK_EN()				(RCC->AHB1ENR |=  (1 << 1))
@@ -171,17 +181,6 @@
 
 // system config clock enable
 #define SYSCFG_PCLK_EN()			(RCC->APB2ENR |=  (1 << 14))
-
-// IRQ numbers for peripherals
-#define IRQ_POS_EXTI0			6
-#define IRQ_POS_EXTI1			7
-#define IRQ_POS_EXTI2			8
-#define IRQ_POS_EXTI3			9
-#define IRQ_POS_EXTI4			10
-#define IRQ_POS_EXTI9_5			23
-#define IRQ_POS_EXTI_10			40
-
-
 
 // =====================================  Peripheral register definition structures ====================================================================================
 
@@ -249,6 +248,5 @@ typedef struct {
 	volatile uint32_t EXTICR[4];			// Offset 0x08-0x14
 	volatile uint32_t CMPCR;				// Offset 0x20
 } SYSCFG_RegDef_t;
-
 
 #endif /* STM32F407XX_H_ */

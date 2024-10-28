@@ -99,7 +99,8 @@ void GPIO_WrtiteToOutoutPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber,
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
 
 // interrupt handling and configuration
-void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnOrDi);
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnOrDi);
 void GPIO_IRQHandler(uint8_t PinNumber);
 
 #endif /* STM32F407XX_GPIO_DRIVER_H_ */

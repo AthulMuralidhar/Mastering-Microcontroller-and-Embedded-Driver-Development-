@@ -67,13 +67,33 @@ Discarded input sections
  .debug_str     0x00000000       0x8e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
  .ARM.attributes
                 0x00000000       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
- .group         0x00000000        0xc ./Src/led_btn.o
- .group         0x00000000        0xc ./Src/led_btn.o
- .group         0x00000000        0xc ./Src/led_btn.o
- .group         0x00000000        0xc ./Src/led_btn.o
- .text          0x00000000        0x0 ./Src/led_btn.o
- .data          0x00000000        0x0 ./Src/led_btn.o
- .bss           0x00000000        0x0 ./Src/led_btn.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .group         0x00000000        0xc ./Src/btn_interrupt.o
+ .text          0x00000000        0x0 ./Src/btn_interrupt.o
+ .data          0x00000000        0x0 ./Src/btn_interrupt.o
+ .bss           0x00000000        0x0 ./Src/btn_interrupt.o
+ .text.delay    0x00000000       0x2c ./Src/btn_interrupt.o
  .group         0x00000000        0xc ./Src/syscalls.o
  .group         0x00000000        0xc ./Src/syscalls.o
  .group         0x00000000        0xc ./Src/syscalls.o
@@ -280,36 +300,21 @@ Discarded input sections
  .bss           0x00000000        0x0 ./drivers/stm32f407xx_gpio_driver.o
  .text.GPIO_DeInit
                 0x00000000      0x16c ./drivers/stm32f407xx_gpio_driver.o
+ .text.GPIO_ReadFromInputPin
+                0x00000000       0x2c ./drivers/stm32f407xx_gpio_driver.o
  .text.GPIO_ReadFromInputPort
                 0x00000000       0x1c ./drivers/stm32f407xx_gpio_driver.o
  .text.GPIO_WriteToOutputPort
                 0x00000000       0x1e ./drivers/stm32f407xx_gpio_driver.o
  .text.GPIO_WriteToOutputPin
                 0x00000000       0x4a ./drivers/stm32f407xx_gpio_driver.o
- .text.GPIO_IRQConfig
-                0x00000000       0x1e ./drivers/stm32f407xx_gpio_driver.o
- .text.GPIO_IRQHandler
-                0x00000000       0x16 ./drivers/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000      0xae4 ./drivers/stm32f407xx_gpio_driver.o
  .debug_macro   0x00000000      0x34e ./drivers/stm32f407xx_gpio_driver.o
- .debug_macro   0x00000000      0x258 ./drivers/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00000000      0x2e1 ./drivers/stm32f407xx_gpio_driver.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
- .text          0x00000000       0xa4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_info    0x00000000      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_abbrev  0x00000000       0xb7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_loclists
-                0x00000000      0x1c2 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_aranges
-                0x00000000       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_line    0x00000000      0x1b6 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_str     0x00000000      0x1ad /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .comment       0x00000000       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .debug_frame   0x00000000       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
- .ARM.attributes
-                0x00000000       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
  .text          0x00000000        0xc /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
@@ -635,7 +640,7 @@ Linker script and memory map
 LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
 LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
-LOAD ./Src/led_btn.o
+LOAD ./Src/btn_interrupt.o
 LOAD ./Src/syscalls.o
 LOAD ./Src/sysmem.o
 LOAD ./Startup/startup_stm32f407vgtx.o
@@ -671,201 +676,209 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
                 0x08000000                g_pfnVectors
                 0x08000188                        . = ALIGN (0x4)
 
-.text           0x08000188      0x744
+.text           0x08000188      0x984
                 0x08000188                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000188       0x88 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .text          0x08000210       0x50 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
                 0x08000210                __libc_init_array
+ .text          0x08000260       0xa4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x08000260                memset
  *(.text*)
- .text.delay    0x08000260       0x2c ./Src/led_btn.o
-                0x08000260                delay
- .text.main     0x0800028c       0x84 ./Src/led_btn.o
-                0x0800028c                main
+ .text.main     0x08000304       0x8c ./Src/btn_interrupt.o
+                0x08000304                main
+ .text.EXTI0_IRQHandler
+                0x08000390       0x1c ./Src/btn_interrupt.o
+                0x08000390                EXTI0_IRQHandler
  .text.Reset_Handler
-                0x08000310       0x50 ./Startup/startup_stm32f407vgtx.o
-                0x08000310                Reset_Handler
+                0x080003ac       0x50 ./Startup/startup_stm32f407vgtx.o
+                0x080003ac                Reset_Handler
  .text.Default_Handler
-                0x08000360        0x2 ./Startup/startup_stm32f407vgtx.o
-                0x08000360                RTC_Alarm_IRQHandler
-                0x08000360                HASH_RNG_IRQHandler
-                0x08000360                EXTI2_IRQHandler
-                0x08000360                TIM8_CC_IRQHandler
-                0x08000360                DebugMon_Handler
-                0x08000360                TIM1_CC_IRQHandler
-                0x08000360                DMA2_Stream5_IRQHandler
-                0x08000360                HardFault_Handler
-                0x08000360                DMA1_Stream5_IRQHandler
-                0x08000360                SysTick_Handler
-                0x08000360                PVD_IRQHandler
-                0x08000360                SDIO_IRQHandler
-                0x08000360                TAMP_STAMP_IRQHandler
-                0x08000360                PendSV_Handler
-                0x08000360                NMI_Handler
-                0x08000360                CAN2_RX1_IRQHandler
-                0x08000360                EXTI3_IRQHandler
-                0x08000360                TIM8_TRG_COM_TIM14_IRQHandler
-                0x08000360                TIM1_UP_TIM10_IRQHandler
-                0x08000360                TIM8_UP_TIM13_IRQHandler
-                0x08000360                I2C3_ER_IRQHandler
-                0x08000360                EXTI0_IRQHandler
-                0x08000360                I2C2_EV_IRQHandler
-                0x08000360                DMA1_Stream2_IRQHandler
-                0x08000360                CAN1_RX0_IRQHandler
-                0x08000360                FPU_IRQHandler
-                0x08000360                OTG_HS_WKUP_IRQHandler
-                0x08000360                UsageFault_Handler
-                0x08000360                CAN2_SCE_IRQHandler
-                0x08000360                DMA2_Stream2_IRQHandler
-                0x08000360                SPI1_IRQHandler
-                0x08000360                TIM6_DAC_IRQHandler
-                0x08000360                TIM1_BRK_TIM9_IRQHandler
-                0x08000360                DCMI_IRQHandler
-                0x08000360                CAN2_RX0_IRQHandler
-                0x08000360                DMA2_Stream3_IRQHandler
-                0x08000360                USART6_IRQHandler
-                0x08000360                USART3_IRQHandler
-                0x08000360                CRYP_IRQHandler
-                0x08000360                CAN1_RX1_IRQHandler
-                0x08000360                UART5_IRQHandler
-                0x08000360                DMA2_Stream0_IRQHandler
-                0x08000360                TIM4_IRQHandler
-                0x08000360                I2C1_EV_IRQHandler
-                0x08000360                DMA1_Stream6_IRQHandler
-                0x08000360                DMA1_Stream1_IRQHandler
-                0x08000360                UART4_IRQHandler
-                0x08000360                TIM3_IRQHandler
-                0x08000360                RCC_IRQHandler
-                0x08000360                TIM8_BRK_TIM12_IRQHandler
-                0x08000360                Default_Handler
-                0x08000360                EXTI15_10_IRQHandler
-                0x08000360                ADC_IRQHandler
-                0x08000360                DMA1_Stream7_IRQHandler
-                0x08000360                TIM7_IRQHandler
-                0x08000360                CAN2_TX_IRQHandler
-                0x08000360                TIM5_IRQHandler
-                0x08000360                DMA2_Stream7_IRQHandler
-                0x08000360                I2C3_EV_IRQHandler
-                0x08000360                EXTI9_5_IRQHandler
-                0x08000360                RTC_WKUP_IRQHandler
-                0x08000360                ETH_WKUP_IRQHandler
-                0x08000360                SPI2_IRQHandler
-                0x08000360                OTG_HS_EP1_IN_IRQHandler
-                0x08000360                MemManage_Handler
-                0x08000360                DMA1_Stream0_IRQHandler
-                0x08000360                CAN1_TX_IRQHandler
-                0x08000360                SVC_Handler
-                0x08000360                EXTI4_IRQHandler
-                0x08000360                FSMC_IRQHandler
-                0x08000360                ETH_IRQHandler
-                0x08000360                OTG_HS_EP1_OUT_IRQHandler
-                0x08000360                WWDG_IRQHandler
-                0x08000360                TIM2_IRQHandler
-                0x08000360                OTG_FS_WKUP_IRQHandler
-                0x08000360                TIM1_TRG_COM_TIM11_IRQHandler
-                0x08000360                OTG_HS_IRQHandler
-                0x08000360                EXTI1_IRQHandler
-                0x08000360                USART2_IRQHandler
-                0x08000360                I2C2_ER_IRQHandler
-                0x08000360                DMA2_Stream1_IRQHandler
-                0x08000360                CAN1_SCE_IRQHandler
-                0x08000360                DMA2_Stream4_IRQHandler
-                0x08000360                BusFault_Handler
-                0x08000360                USART1_IRQHandler
-                0x08000360                OTG_FS_IRQHandler
-                0x08000360                SPI3_IRQHandler
-                0x08000360                DMA1_Stream4_IRQHandler
-                0x08000360                I2C1_ER_IRQHandler
-                0x08000360                DMA2_Stream6_IRQHandler
-                0x08000360                DMA1_Stream3_IRQHandler
- *fill*         0x08000362        0x2 
+                0x080003fc        0x2 ./Startup/startup_stm32f407vgtx.o
+                0x080003fc                RTC_Alarm_IRQHandler
+                0x080003fc                HASH_RNG_IRQHandler
+                0x080003fc                EXTI2_IRQHandler
+                0x080003fc                TIM8_CC_IRQHandler
+                0x080003fc                DebugMon_Handler
+                0x080003fc                TIM1_CC_IRQHandler
+                0x080003fc                DMA2_Stream5_IRQHandler
+                0x080003fc                HardFault_Handler
+                0x080003fc                DMA1_Stream5_IRQHandler
+                0x080003fc                SysTick_Handler
+                0x080003fc                PVD_IRQHandler
+                0x080003fc                SDIO_IRQHandler
+                0x080003fc                TAMP_STAMP_IRQHandler
+                0x080003fc                PendSV_Handler
+                0x080003fc                NMI_Handler
+                0x080003fc                CAN2_RX1_IRQHandler
+                0x080003fc                EXTI3_IRQHandler
+                0x080003fc                TIM8_TRG_COM_TIM14_IRQHandler
+                0x080003fc                TIM1_UP_TIM10_IRQHandler
+                0x080003fc                TIM8_UP_TIM13_IRQHandler
+                0x080003fc                I2C3_ER_IRQHandler
+                0x080003fc                I2C2_EV_IRQHandler
+                0x080003fc                DMA1_Stream2_IRQHandler
+                0x080003fc                CAN1_RX0_IRQHandler
+                0x080003fc                FPU_IRQHandler
+                0x080003fc                OTG_HS_WKUP_IRQHandler
+                0x080003fc                UsageFault_Handler
+                0x080003fc                CAN2_SCE_IRQHandler
+                0x080003fc                DMA2_Stream2_IRQHandler
+                0x080003fc                SPI1_IRQHandler
+                0x080003fc                TIM6_DAC_IRQHandler
+                0x080003fc                TIM1_BRK_TIM9_IRQHandler
+                0x080003fc                DCMI_IRQHandler
+                0x080003fc                CAN2_RX0_IRQHandler
+                0x080003fc                DMA2_Stream3_IRQHandler
+                0x080003fc                USART6_IRQHandler
+                0x080003fc                USART3_IRQHandler
+                0x080003fc                CRYP_IRQHandler
+                0x080003fc                CAN1_RX1_IRQHandler
+                0x080003fc                UART5_IRQHandler
+                0x080003fc                DMA2_Stream0_IRQHandler
+                0x080003fc                TIM4_IRQHandler
+                0x080003fc                I2C1_EV_IRQHandler
+                0x080003fc                DMA1_Stream6_IRQHandler
+                0x080003fc                DMA1_Stream1_IRQHandler
+                0x080003fc                UART4_IRQHandler
+                0x080003fc                TIM3_IRQHandler
+                0x080003fc                RCC_IRQHandler
+                0x080003fc                TIM8_BRK_TIM12_IRQHandler
+                0x080003fc                Default_Handler
+                0x080003fc                EXTI15_10_IRQHandler
+                0x080003fc                ADC_IRQHandler
+                0x080003fc                DMA1_Stream7_IRQHandler
+                0x080003fc                TIM7_IRQHandler
+                0x080003fc                CAN2_TX_IRQHandler
+                0x080003fc                TIM5_IRQHandler
+                0x080003fc                DMA2_Stream7_IRQHandler
+                0x080003fc                I2C3_EV_IRQHandler
+                0x080003fc                EXTI9_5_IRQHandler
+                0x080003fc                RTC_WKUP_IRQHandler
+                0x080003fc                ETH_WKUP_IRQHandler
+                0x080003fc                SPI2_IRQHandler
+                0x080003fc                OTG_HS_EP1_IN_IRQHandler
+                0x080003fc                MemManage_Handler
+                0x080003fc                DMA1_Stream0_IRQHandler
+                0x080003fc                CAN1_TX_IRQHandler
+                0x080003fc                SVC_Handler
+                0x080003fc                EXTI4_IRQHandler
+                0x080003fc                FSMC_IRQHandler
+                0x080003fc                ETH_IRQHandler
+                0x080003fc                OTG_HS_EP1_OUT_IRQHandler
+                0x080003fc                WWDG_IRQHandler
+                0x080003fc                TIM2_IRQHandler
+                0x080003fc                OTG_FS_WKUP_IRQHandler
+                0x080003fc                TIM1_TRG_COM_TIM11_IRQHandler
+                0x080003fc                OTG_HS_IRQHandler
+                0x080003fc                EXTI1_IRQHandler
+                0x080003fc                USART2_IRQHandler
+                0x080003fc                I2C2_ER_IRQHandler
+                0x080003fc                DMA2_Stream1_IRQHandler
+                0x080003fc                CAN1_SCE_IRQHandler
+                0x080003fc                DMA2_Stream4_IRQHandler
+                0x080003fc                BusFault_Handler
+                0x080003fc                USART1_IRQHandler
+                0x080003fc                OTG_FS_IRQHandler
+                0x080003fc                SPI3_IRQHandler
+                0x080003fc                DMA1_Stream4_IRQHandler
+                0x080003fc                I2C1_ER_IRQHandler
+                0x080003fc                DMA2_Stream6_IRQHandler
+                0x080003fc                DMA1_Stream3_IRQHandler
+ *fill*         0x080003fe        0x2 
  .text.GPIO_PClockControl
-                0x08000364      0x1d4 ./drivers/stm32f407xx_gpio_driver.o
-                0x08000364                GPIO_PClockControl
+                0x08000400      0x1d4 ./drivers/stm32f407xx_gpio_driver.o
+                0x08000400                GPIO_PClockControl
  .text.GPIO_Init
-                0x08000538      0x324 ./drivers/stm32f407xx_gpio_driver.o
-                0x08000538                GPIO_Init
- .text.GPIO_ReadFromInputPin
-                0x0800085c       0x2c ./drivers/stm32f407xx_gpio_driver.o
-                0x0800085c                GPIO_ReadFromInputPin
+                0x080005d4      0x324 ./drivers/stm32f407xx_gpio_driver.o
+                0x080005d4                GPIO_Init
  .text.GPIO_ToggleOutputPin
-                0x08000888       0x2a ./drivers/stm32f407xx_gpio_driver.o
-                0x08000888                GPIO_ToggleOutputPin
+                0x080008f8       0x2a ./drivers/stm32f407xx_gpio_driver.o
+                0x080008f8                GPIO_ToggleOutputPin
+ *fill*         0x08000922        0x2 
+ .text.GPIO_IRQInterruptConfig
+                0x08000924      0x110 ./drivers/stm32f407xx_gpio_driver.o
+                0x08000924                GPIO_IRQInterruptConfig
+ .text.GPIO_IRQPriorityConfig
+                0x08000a34       0x80 ./drivers/stm32f407xx_gpio_driver.o
+                0x08000a34                GPIO_IRQPriorityConfig
+ .text.GPIO_IRQHandler
+                0x08000ab4       0x40 ./drivers/stm32f407xx_gpio_driver.o
+                0x08000ab4                GPIO_IRQHandler
  *(.glue_7)
- .glue_7        0x080008b2        0x0 linker stubs
+ .glue_7        0x08000af4        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080008b2        0x0 linker stubs
+ .glue_7t       0x08000af4        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x080008b2        0x2 
- .eh_frame      0x080008b4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08000af4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x080008b4        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x080008b4                _init
- .init          0x080008b8        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08000af4        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x08000af4                _init
+ .init          0x08000af8        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080008c0        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x080008c0                _fini
- .fini          0x080008c4        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080008cc                        . = ALIGN (0x4)
-                0x080008cc                        _etext = .
+ .fini          0x08000b00        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x08000b00                _fini
+ .fini          0x08000b04        0x8 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08000b0c                        . = ALIGN (0x4)
+                0x08000b0c                        _etext = .
 
-.vfp11_veneer   0x080008cc        0x0
- .vfp11_veneer  0x080008cc        0x0 linker stubs
+.vfp11_veneer   0x08000b0c        0x0
+ .vfp11_veneer  0x08000b0c        0x0 linker stubs
 
-.v4_bx          0x080008cc        0x0
- .v4_bx         0x080008cc        0x0 linker stubs
+.v4_bx          0x08000b0c        0x0
+ .v4_bx         0x08000b0c        0x0 linker stubs
 
-.iplt           0x080008cc        0x0
- .iplt          0x080008cc        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08000b0c        0x0
+ .iplt          0x08000b0c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080008cc        0x0
-                0x080008cc                        . = ALIGN (0x4)
+.rodata         0x08000b0c        0x0
+                0x08000b0c                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x080008cc                        . = ALIGN (0x4)
+                0x08000b0c                        . = ALIGN (0x4)
 
-.ARM.extab      0x080008cc        0x0
-                0x080008cc                        . = ALIGN (0x4)
+.ARM.extab      0x08000b0c        0x0
+                0x08000b0c                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080008cc                        . = ALIGN (0x4)
+                0x08000b0c                        . = ALIGN (0x4)
 
-.ARM            0x080008cc        0x0
-                0x080008cc                        . = ALIGN (0x4)
-                0x080008cc                        __exidx_start = .
+.ARM            0x08000b0c        0x0
+                0x08000b0c                        . = ALIGN (0x4)
+                0x08000b0c                        __exidx_start = .
  *(.ARM.exidx*)
-                0x080008cc                        __exidx_end = .
-                0x080008cc                        . = ALIGN (0x4)
+                0x08000b0c                        __exidx_end = .
+                0x08000b0c                        . = ALIGN (0x4)
 
-.preinit_array  0x080008cc        0x0
-                0x080008cc                        . = ALIGN (0x4)
-                0x080008cc                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08000b0c        0x0
+                0x08000b0c                        . = ALIGN (0x4)
+                0x08000b0c                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080008cc                        PROVIDE (__preinit_array_end = .)
-                0x080008cc                        . = ALIGN (0x4)
+                0x08000b0c                        PROVIDE (__preinit_array_end = .)
+                0x08000b0c                        . = ALIGN (0x4)
 
-.init_array     0x080008cc        0x4
-                0x080008cc                        . = ALIGN (0x4)
-                0x080008cc                        PROVIDE (__init_array_start = .)
+.init_array     0x08000b0c        0x4
+                0x08000b0c                        . = ALIGN (0x4)
+                0x08000b0c                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080008cc        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x080008d0                        PROVIDE (__init_array_end = .)
-                0x080008d0                        . = ALIGN (0x4)
+ .init_array    0x08000b0c        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08000b10                        PROVIDE (__init_array_end = .)
+                0x08000b10                        . = ALIGN (0x4)
 
-.fini_array     0x080008d0        0x4
-                0x080008d0                        . = ALIGN (0x4)
-                0x080008d0                        PROVIDE (__fini_array_start = .)
+.fini_array     0x08000b10        0x4
+                0x08000b10                        . = ALIGN (0x4)
+                0x08000b10                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080008d0        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x080008d4                        PROVIDE (__fini_array_end = .)
-                0x080008d4                        . = ALIGN (0x4)
-                0x080008d4                        _sidata = LOADADDR (.data)
+ .fini_array    0x08000b10        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08000b14                        PROVIDE (__fini_array_end = .)
+                0x08000b14                        . = ALIGN (0x4)
+                0x08000b14                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x080008d4        0x0
- .rel.iplt      0x080008d4        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x08000b14        0x0
+ .rel.iplt      0x08000b14        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000        0x0 load address 0x080008d4
+.data           0x20000000        0x0 load address 0x08000b14
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -874,19 +887,19 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.RamFunc*)
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _edata = .
-                0x080008d4                        _siccmram = LOADADDR (.ccmram)
+                0x08000b14                        _siccmram = LOADADDR (.ccmram)
 
 .tm_clone_table
-                0x20000000        0x0 load address 0x080008d4
+                0x20000000        0x0 load address 0x08000b14
  .tm_clone_table
                 0x20000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .tm_clone_table
                 0x20000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
 
-.igot.plt       0x20000000        0x0 load address 0x080008d4
+.igot.plt       0x20000000        0x0 load address 0x08000b14
  .igot.plt      0x20000000        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x080008d4
+.ccmram         0x10000000        0x0 load address 0x08000b14
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)
@@ -931,7 +944,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
  .ARM.attributes
                 0x00000022       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .ARM.attributes
-                0x00000056       0x34 ./Src/led_btn.o
+                0x00000056       0x34 ./Src/btn_interrupt.o
  .ARM.attributes
                 0x0000008a       0x21 ./Startup/startup_stm32f407vgtx.o
  .ARM.attributes
@@ -939,9 +952,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
  .ARM.attributes
                 0x000000df       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
  .ARM.attributes
-                0x00000113       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
+                0x00000113       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
  .ARM.attributes
-                0x00000147       0x22 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00000147       0x34 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
+ .ARM.attributes
+                0x0000017b       0x22 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
 OUTPUT(stm32f4xx_drivers.elf elf32-littlearm)
 LOAD linker stubs
 LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a
@@ -951,68 +966,95 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/libgcc.a
 .comment        0x00000000       0x26
  .comment       0x00000000       0x26 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
                                  0x27 (size before relaxing)
- .comment       0x00000026       0x27 ./Src/led_btn.o
+ .comment       0x00000026       0x27 ./Src/btn_interrupt.o
  .comment       0x00000026       0x27 ./drivers/stm32f407xx_gpio_driver.o
  .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
  .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtend.o
 
-.debug_info     0x00000000      0xa5d
- .debug_info    0x00000000      0x287 ./Src/led_btn.o
- .debug_info    0x00000287       0x30 ./Startup/startup_stm32f407vgtx.o
- .debug_info    0x000002b7      0x69b ./drivers/stm32f407xx_gpio_driver.o
- .debug_info    0x00000952      0x10b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+.debug_info     0x00000000      0xc4a
+ .debug_info    0x00000000      0x2e4 ./Src/btn_interrupt.o
+ .debug_info    0x000002e4       0x30 ./Startup/startup_stm32f407vgtx.o
+ .debug_info    0x00000314      0x6f6 ./drivers/stm32f407xx_gpio_driver.o
+ .debug_info    0x00000a0a      0x10b /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_info    0x00000b15      0x135 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
 
-.debug_abbrev   0x00000000      0x363
- .debug_abbrev  0x00000000      0x129 ./Src/led_btn.o
- .debug_abbrev  0x00000129       0x24 ./Startup/startup_stm32f407vgtx.o
- .debug_abbrev  0x0000014d      0x14d ./drivers/stm32f407xx_gpio_driver.o
- .debug_abbrev  0x0000029a       0xc9 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+.debug_abbrev   0x00000000      0x44e
+ .debug_abbrev  0x00000000      0x14a ./Src/btn_interrupt.o
+ .debug_abbrev  0x0000014a       0x24 ./Startup/startup_stm32f407vgtx.o
+ .debug_abbrev  0x0000016e      0x160 ./drivers/stm32f407xx_gpio_driver.o
+ .debug_abbrev  0x000002ce       0xc9 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_abbrev  0x00000397       0xb7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
 
-.debug_aranges  0x00000000       0xd8
+.debug_aranges  0x00000000      0x108
  .debug_aranges
-                0x00000000       0x28 ./Src/led_btn.o
+                0x00000000       0x30 ./Src/btn_interrupt.o
  .debug_aranges
-                0x00000028       0x28 ./Startup/startup_stm32f407vgtx.o
+                0x00000030       0x28 ./Startup/startup_stm32f407vgtx.o
  .debug_aranges
-                0x00000050       0x68 ./drivers/stm32f407xx_gpio_driver.o
+                0x00000058       0x70 ./drivers/stm32f407xx_gpio_driver.o
  .debug_aranges
-                0x000000b8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+                0x000000c8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_aranges
+                0x000000e8       0x20 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
 
 .debug_rnglists
-                0x00000000       0x7f
+                0x00000000       0x8d
  .debug_rnglists
-                0x00000000       0x1a ./Src/led_btn.o
+                0x00000000       0x20 ./Src/btn_interrupt.o
  .debug_rnglists
-                0x0000001a       0x19 ./Startup/startup_stm32f407vgtx.o
+                0x00000020       0x19 ./Startup/startup_stm32f407vgtx.o
  .debug_rnglists
-                0x00000033       0x4c ./drivers/stm32f407xx_gpio_driver.o
+                0x00000039       0x54 ./drivers/stm32f407xx_gpio_driver.o
 
-.debug_macro    0x00000000     0x128e
- .debug_macro   0x00000000       0x3e ./Src/led_btn.o
- .debug_macro   0x0000003e      0xae4 ./Src/led_btn.o
- .debug_macro   0x00000b22      0x34e ./Src/led_btn.o
- .debug_macro   0x00000e70      0x258 ./Src/led_btn.o
- .debug_macro   0x000010c8       0xca ./Src/led_btn.o
- .debug_macro   0x00001192       0x38 ./drivers/stm32f407xx_gpio_driver.o
- .debug_macro   0x000011ca       0xc4 ./drivers/stm32f407xx_gpio_driver.o
+.debug_macro    0x00000000     0x1e6b
+ .debug_macro   0x00000000      0x12d ./Src/btn_interrupt.o
+ .debug_macro   0x0000012d      0xae4 ./Src/btn_interrupt.o
+ .debug_macro   0x00000c11       0x22 ./Src/btn_interrupt.o
+ .debug_macro   0x00000c33       0x54 ./Src/btn_interrupt.o
+ .debug_macro   0x00000c87       0x2a ./Src/btn_interrupt.o
+ .debug_macro   0x00000cb1       0x94 ./Src/btn_interrupt.o
+ .debug_macro   0x00000d45       0x43 ./Src/btn_interrupt.o
+ .debug_macro   0x00000d88       0x34 ./Src/btn_interrupt.o
+ .debug_macro   0x00000dbc      0x190 ./Src/btn_interrupt.o
+ .debug_macro   0x00000f4c       0x57 ./Src/btn_interrupt.o
+ .debug_macro   0x00000fa3      0x370 ./Src/btn_interrupt.o
+ .debug_macro   0x00001313       0x16 ./Src/btn_interrupt.o
+ .debug_macro   0x00001329       0x4a ./Src/btn_interrupt.o
+ .debug_macro   0x00001373       0x34 ./Src/btn_interrupt.o
+ .debug_macro   0x000013a7       0x10 ./Src/btn_interrupt.o
+ .debug_macro   0x000013b7       0x52 ./Src/btn_interrupt.o
+ .debug_macro   0x00001409       0x8e ./Src/btn_interrupt.o
+ .debug_macro   0x00001497       0x1c ./Src/btn_interrupt.o
+ .debug_macro   0x000014b3      0x177 ./Src/btn_interrupt.o
+ .debug_macro   0x0000162a       0x10 ./Src/btn_interrupt.o
+ .debug_macro   0x0000163a       0x3c ./Src/btn_interrupt.o
+ .debug_macro   0x00001676      0x34e ./Src/btn_interrupt.o
+ .debug_macro   0x000019c4      0x2e1 ./Src/btn_interrupt.o
+ .debug_macro   0x00001ca5       0xca ./Src/btn_interrupt.o
+ .debug_macro   0x00001d6f       0x38 ./drivers/stm32f407xx_gpio_driver.o
+ .debug_macro   0x00001da7       0xc4 ./drivers/stm32f407xx_gpio_driver.o
 
-.debug_line     0x00000000      0x89e
- .debug_line    0x00000000      0x179 ./Src/led_btn.o
- .debug_line    0x00000179       0x7b ./Startup/startup_stm32f407vgtx.o
- .debug_line    0x000001f4      0x58c ./drivers/stm32f407xx_gpio_driver.o
- .debug_line    0x00000780      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+.debug_line     0x00000000      0xc95
+ .debug_line    0x00000000      0x2d2 ./Src/btn_interrupt.o
+ .debug_line    0x000002d2       0x7b ./Startup/startup_stm32f407vgtx.o
+ .debug_line    0x0000034d      0x674 ./drivers/stm32f407xx_gpio_driver.o
+ .debug_line    0x000009c1      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_line    0x00000adf      0x1b6 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
 
-.debug_str      0x00000000     0x522f
- .debug_str     0x00000000     0x522f ./Src/led_btn.o
-                               0x4f78 (size before relaxing)
- .debug_str     0x0000522f       0xa6 ./Startup/startup_stm32f407vgtx.o
- .debug_str     0x0000522f     0x519d ./drivers/stm32f407xx_gpio_driver.o
- .debug_str     0x0000522f      0x1fa /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+.debug_str      0x00000000     0x8b12
+ .debug_str     0x00000000     0x8b12 ./Src/btn_interrupt.o
+                               0x889b (size before relaxing)
+ .debug_str     0x00008b12       0xa6 ./Startup/startup_stm32f407vgtx.o
+ .debug_str     0x00008b12     0x5427 ./drivers/stm32f407xx_gpio_driver.o
+ .debug_str     0x00008b12      0x1fa /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_str     0x00008b12      0x1ad /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
 
-.debug_frame    0x00000000      0x224
- .debug_frame   0x00000000       0x58 ./Src/led_btn.o
- .debug_frame   0x00000058      0x1a0 ./drivers/stm32f407xx_gpio_driver.o
- .debug_frame   0x000001f8       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+.debug_frame    0x00000000      0x2a4
+ .debug_frame   0x00000000       0x74 ./Src/btn_interrupt.o
+ .debug_frame   0x00000074      0x1d8 ./drivers/stm32f407xx_gpio_driver.o
+ .debug_frame   0x0000024c       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_frame   0x00000278       0x2c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
 
 .debug_line_str
                 0x00000000       0x8c
@@ -1020,6 +1062,8 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/libgcc.a
                 0x00000000       0x8c ./Startup/startup_stm32f407vgtx.o
 
 .debug_loclists
-                0x00000000       0x65
+                0x00000000      0x227
  .debug_loclists
                 0x00000000       0x65 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+ .debug_loclists
+                0x00000065      0x1c2 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
