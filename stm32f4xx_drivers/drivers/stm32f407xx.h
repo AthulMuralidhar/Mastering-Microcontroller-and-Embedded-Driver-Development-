@@ -98,6 +98,9 @@
 #define SPI1_BASE_ADDR								(APB2_PERIPHERAL_BASE_ADDR + 0x3000)
 #define SYSCFG_BASE_ADDR							(APB2_PERIPHERAL_BASE_ADDR + 0x3800)
 #define EXTI_BASE_ADDR								(APB2_PERIPHERAL_BASE_ADDR + 0x3C00)
+#define SPI4_BASE_ADDR								(APB2_PERIPHERAL_BASE_ADDR + 0x3400)
+#define SPI5_BASE_ADDR								(APB2_PERIPHERAL_BASE_ADDR + 0x5000)
+#define SPI6_BASE_ADDR								(APB2_PERIPHERAL_BASE_ADDR + 0x5400)
 
 // peripheral definitions
 #define GPIOA   	((GPIO_RegDef_t*)GPIOA_BASE_ADDR)
@@ -248,5 +251,22 @@ typedef struct {
 	volatile uint32_t EXTICR[4];			// Offset 0x08-0x14
 	volatile uint32_t CMPCR;				// Offset 0x20
 } SYSCFG_RegDef_t;
+
+
+// Peripheral register definition structure for SPIx
+typedef struct {
+	volatile uint32_t CR1;					// Offset 0x00
+	volatile uint32_t CR2;					// Offset 0x04
+	volatile uint32_t SR;					// Offset 0x08
+	volatile uint32_t DR;					// Offset 0x0C
+	volatile uint32_t CRCPR;				// Offset 0x10
+	volatile uint32_t RXCRCR;				// Offset 0x14
+	volatile uint32_t TXCRCR;				// Offset 0x18
+	volatile uint32_t I2SCFGR;				// Offset 0x1C
+	volatile uint32_t I2SPR;				// Offset 0x20
+} SPI_RegDef_t;
+
+
+
 
 #endif /* STM32F407XX_H_ */
