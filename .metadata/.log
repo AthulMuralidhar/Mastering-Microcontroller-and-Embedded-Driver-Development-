@@ -2012,3 +2012,26 @@ java.lang.NullPointerException: Cannot read field "x" because "modelSelection" i
 
 !ENTRY org.eclipse.ui 2 2 2024-11-02 14:56:37.024
 !MESSAGE Invalid preference category path: org.eclipse.jdt.ui.preferences.JavaBasePreferencePage (bundle: eclatosa, page: autosave.preferences.AutoSavePreferencePage)
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-11-02 15:00:51.622
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-11-02 16:10:17.821
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-11-02 16:27:54.780
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY com.wakatime.eclipse.plugin 4 0 2024-11-02 16:47:11.916
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-11-02 16:53:57.198
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-11-02 16:55:36.410
+!MESSAGE No .vrapperrc or _vrapperrc found.
+
+!ENTRY net.sourceforge.vrapper.eclipse 1 0 2024-11-02 16:56:54.950
+!MESSAGE No .vrapperrc or _vrapperrc found.

@@ -25,10 +25,10 @@
 #define GPIO_OP_TYPE_OD    1  // Configures the GPIO pin as Open-Drain output type
 
 // GPIO pin possible output speeds
-#define GPIO_OP_SPEED_LOW    0  // Configures the GPIO pin for low output speed
-#define GPIO_OP_SPEED_MEDIUM 1  // Configures the GPIO pin for medium output speed
-#define GPIO_OP_SPEED_FAST   2  // Configures the GPIO pin for fast output speed
-#define GPIO_OP_SPEED_HIGH   3  // Configures the GPIO pin for high output speed
+#define GPIO_SPEED_LOW    0  // Configures the GPIO pin for low output speed
+#define GPIO_SPEED_MEDIUM 1  // Configures the GPIO pin for medium output speed
+#define GPIO_SPEED_FAST   2  // Configures the GPIO pin for fast output speed
+#define GPIO_SPEED_HIGH   3  // Configures the GPIO pin for high output speed
 
 // GPIO pin pull up pull down configuration macros
 #define GPIO_NO_PUPD    0  // Configures the GPIO pin with no pull-up/pull-down
@@ -53,6 +53,7 @@
 #define	GPIO_PIN_NO_13		13
 #define	GPIO_PIN_NO_14		14
 #define	GPIO_PIN_NO_15		15
+
 
 // General pin configuration structure
 typedef struct {
