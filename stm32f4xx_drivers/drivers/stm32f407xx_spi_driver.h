@@ -11,6 +11,36 @@
 #include <stm32f407xx.h>
 
 
+
+#define SPI_DEVICE_MODE_MASTER          1       // SPI device mode: Master
+#define SPI_DEVICE_MODE_SLAVE           0       // SPI device mode: Slave
+
+#define SPI_BUS_CONFIG_FD               1       // SPI bus configuration: Full-duplex
+#define SPI_BUS_CONFIG_HD               2       // SPI bus configuration: Half-duplex
+#define SPI_BUS_CONFIG_SIMPLEX_RXONLY   3       // SPI bus configuration: Simplex RX only
+
+#define SPI_SCLK_SPEED_DIV2             0       // SPI clock speed: Divide by 2
+#define SPI_SCLK_SPEED_DIV4             1       // SPI clock speed: Divide by 4
+#define SPI_SCLK_SPEED_DIV8             2       // SPI clock speed: Divide by 8
+#define SPI_SCLK_SPEED_DIV16            3       // SPI clock speed: Divide by 16
+#define SPI_SCLK_SPEED_DIV32            4       // SPI clock speed: Divide by 32
+#define SPI_SCLK_SPEED_DIV64            5       // SPI clock speed: Divide by 64
+#define SPI_SCLK_SPEED_DIV128           6       // SPI clock speed: Divide by 128
+#define SPI_SCLK_SPEED_DIV256           7       // SPI clock speed: Divide by 256
+
+#define SPI_DFF_8BITS                   0       // SPI data frame format: 8-bit
+#define SPI_DFF_16BITS                  1       // SPI data frame format: 16-bit
+
+#define SPI_CPOL_HIGH                   1       // SPI clock polarity: High when idle
+#define SPI_CPOL_LOW                    0       // SPI clock polarity: Low when idle
+
+#define SPI_CPHA_HIGH                   1       // SPI clock phase: Capture on second edge
+#define SPI_CPHA_LOW                    0       // SPI clock phase: Capture on first edge
+
+#define SPI_SSM_EN                      1       // SPI slave select management: Hardware
+#define SPI_SSM_DI                      0       // SPI slave select management: Software
+
+
 // configuration structure for SPIx peripheral
 typedef struct {
     uint8_t SPI_DeviceMode;  // Specifies the SPI device mode (Master/Slave)

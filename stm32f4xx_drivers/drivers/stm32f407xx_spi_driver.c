@@ -55,7 +55,9 @@ void SPI_PClockControl(SPI_RegDef_t *pSPIx, uint8_t EnOrDi) {
  *
  * @note                This function must be called before using the SPI peripheral
  */
-void SPI_Init(SPI_Handle_t *pSPIHandle);
+void SPI_Init(SPI_Handle_t *pSPIHandle) {
+
+}
 
 /**
  * @fn                  SPI_DeInit
