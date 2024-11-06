@@ -1,4 +1,4 @@
 ../Src/printer.h:22:6:ITM_SendChar	16	static
 ../Src/printer.h:36:6:ITM_SendString	16	static
 ../Src/printer.h:43:6:ITMPrint	16	static
-../Src/main.c:28:5:main	8	static
+../Src/main.c:29:5:main	8	static

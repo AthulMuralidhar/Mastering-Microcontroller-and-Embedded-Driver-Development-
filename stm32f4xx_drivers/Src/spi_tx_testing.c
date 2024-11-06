@@ -6,6 +6,7 @@
  *
  */
 
+#include <string.h>
 #include "stm32f407xx.h"
 #include "stm32f407xx_gpio_driver.h"
 #include "stm32f407xx_spi_driver.h"
@@ -19,7 +20,7 @@
  *
  * */
 
-void SPI_GPIOInits(void) {
+void SPI2_GPIOInits(void) {
 	GPIO_Handle_t SPIPins;
 
 	SPIPins.pGPIOx = GPIOB;
@@ -37,13 +38,14 @@ void SPI_GPIOInits(void) {
 	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_15;
 	GPIO_Init(&SPIPins);
 
-	// MISO
-	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_14;
-	GPIO_Init(&SPIPins);
-
-	// NSS
-	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
-	GPIO_Init(&SPIPins);
+	// DISABLED as there is no slave in the current configuration
+//	// MISO
+//	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_14;
+//	GPIO_Init(&SPIPins);
+//
+//	// NSS
+//	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
+//	GPIO_Init(&SPIPins);
 
 }
 
@@ -54,7 +56,7 @@ void SPI2_Inits(void) {
 	SPI2Handle.pSPIx = SPI2;
 	SPI2Handle.SPIConfig.SPI_DeviceMode = SPI_DEVICE_MODE_MASTER;
 	SPI2Handle.SPIConfig.SPI_BusConfig = SPI_BUS_CONFIG_FD;
-	SPI2Handle.SPIConfig.SPI_SClkSpeed = SPI_SCLK_SPEED_DIV2;   // clock of 8Mhz
+	SPI2Handle.SPIConfig.SPI_SClkSpeed = SPI_SCLK_SPEED_DIV2;   // clock of 1Mhz
 	SPI2Handle.SPIConfig.SPI_DFF = SPI_DFF_8BITS;
 	SPI2Handle.SPIConfig.SPI_CPHA = SPI_CPHA_LOW;
 	SPI2Handle.SPIConfig.SPI_CPOL = SPI_CPOL_LOW;
@@ -66,11 +68,24 @@ void SPI2_Inits(void) {
 
 int main(void) {
 
+	char user_data[] = "Hello from SPI";
+
 	// GPIO inits to set the alternate functions
 	SPI2_GPIOInits();
 
-
+	// SPI inits
 	SPI2_Inits();
+
+	// configure the SSI bit
+	SPI_SSIConfig(SPI2, ENABLE);
+
+	// enable the SPI2 peripheral
+	SPI_PeripheralControl(SPI2, ENABLE);
+
+	// send data
+	SPI_SendData(SPI2, (uint8_t*)user_data, strlen(user_data));
+
+	while(1);
 
 	return 0;
 }

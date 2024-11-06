@@ -231,9 +231,9 @@ void ITMPrint(const char *text) {
 	...
 
 080002d4 <main>:
+#endif
 
-#include<stdio.h>
-#include "printer.h"
+
 
 int main(void)
 {

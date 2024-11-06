@@ -44,27 +44,28 @@ void GPIO_PClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnOrDi) {
 		}
 	}
 
-	if (EnOrDi == DISABLE) {
-		if (pGPIOx == GPIOA) {
-			GPIOA_PCLK_DI();
-		} else if (pGPIOx == GPIOB) {
-			GPIOB_PCLK_DI();
-		} else if (pGPIOx == GPIOC) {
-			GPIOC_PCLK_DI();
-		} else if (pGPIOx == GPIOD) {
-			GPIOD_PCLK_DI();
-		} else if (pGPIOx == GPIOE) {
-			GPIOE_PCLK_DI();
-		} else if (pGPIOx == GPIOF) {
-			GPIOF_PCLK_DI();
-		} else if (pGPIOx == GPIOG) {
-			GPIOG_PCLK_DI();
-		} else if (pGPIOx == GPIOH) {
-			GPIOH_PCLK_DI();
-		} else if (pGPIOx == GPIOI) {
-			GPIOI_PCLK_DI();
-		}
-	}
+	// FIXME: finish the disable part
+//	if (EnOrDi == DISABLE) {
+//		if (pGPIOx == GPIOA) {
+//			GPIOA_PCLK_DI();
+//		} else if (pGPIOx == GPIOB) {
+//			GPIOB_PCLK_DI();
+//		} else if (pGPIOx == GPIOC) {
+//			GPIOC_PCLK_DI();
+//		} else if (pGPIOx == GPIOD) {
+//			GPIOD_PCLK_DI();
+//		} else if (pGPIOx == GPIOE) {
+//			GPIOE_PCLK_DI();
+//		} else if (pGPIOx == GPIOF) {
+//			GPIOF_PCLK_DI();
+//		} else if (pGPIOx == GPIOG) {
+//			GPIOG_PCLK_DI();
+//		} else if (pGPIOx == GPIOH) {
+//			GPIOH_PCLK_DI();
+//		} else if (pGPIOx == GPIOI) {
+//			GPIOI_PCLK_DI();
+//		}
+//	}
 
 }
 
@@ -122,7 +123,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle) {
 		uint8_t extiBitPosition = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber
 				% 4;   // this tells us about the position within each register
 
-		uint8_t portCode = GPIO_BASE_ADDR_TO_EXTI_CODE(pGPIOHandle->pGPIOx);
+		uint8_t portCode = GPIO_BASEADDR_TO_CODE(pGPIOHandle->pGPIOx);
 		SYSCFG->EXTICR[extiRegisterSet] = portCode << (extiBitPosition * 4);
 
 		// 3.enable the EXTI interrupt delivery using IMR
@@ -379,13 +380,13 @@ void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority) {
 	uint64_t iprx = IRQNumber / 4;
 
 	// Calculate which section of the IPR register to use
-	uint64_t iprx_section = IRQNumber % 4;
+	uint64_t iprx_section = (uint32_t) IRQNumber % 4;
 
 	// Calculate the shift amount based on the section and number of priority bits implemented
-	uint64_t shift_amount = (8 * iprx_section) + (8 - NUM_PR_BITS_IMPLEMENTED);
+	uint64_t shift_amount = (8 * iprx_section) + (8 -  (uint32_t)NVIC_PR_BASE_ADDR);
 
 	// Set the priority in the appropriate IPR register
-	*(NVIC_IPR_BASE_ADDR + iprx)  |= (IRQPriority << shift_amount);
+	*( NVIC_PR_BASE_ADDR + iprx)  |= (IRQPriority << shift_amount);
 }
 
 /**
@@ -409,3 +410,4 @@ void GPIO_IRQHandler(uint8_t PinNumber) {
 
 	}
 }
+
