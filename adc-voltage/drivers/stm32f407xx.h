@@ -107,8 +107,11 @@
 #define USART1_BASEADDR (APB2PERIPH_BASEADDR + 0x1000)  // Base address of USART1
 #define USART6_BASEADDR (APB2PERIPH_BASEADDR + 0x1400)  // Base address of USART6
 
-#define ADC_BASE          (APB2PERIPH_BASEADDR + 0x00002000) /*!< ADC common registers base address */
-#define ADC1_BASEADDR  (APB2PERIPH_BASEADDR + 0x2000)
+#define ADC_BASE          (APB2PERIPH_BASEADDR + 0x2000) /*!< ADC common registers base address */
+#define ADC1_BASEADDR  	  (ADC_BASE + 0x000)
+#define ADC2_BASEADDR  	  (ADC_BASE + 0x100)
+#define ADC3_BASEADDR  	  (ADC_BASE + 0x200)
+
 
 
 /*
@@ -145,8 +148,10 @@
 #define UART5  				((USART_RegDef_t*)UART5_BASEADDR) /*!< Pointer to UART5 registers */
 #define USART6  			((USART_RegDef_t*)USART6_BASEADDR) /*!< Pointer to USART6 registers */
 
-#define ADC               	((ADC_Common_RegDef_t *) ADC_BASE)
+//#define ADC               	((ADC_Common_RegDef_t *) ADC_BASE)
 #define ADC1				((ADC_RegDef_t*) ADC1_BASEADDR)
+#define ADC2				((ADC_RegDef_t*) ADC2_BASEADDR)
+#define ADC3				((ADC_RegDef_t*) ADC3_BASEADDR)
 
 /* Clock Enable Macros for GPIOx peripherals */
 #define GPIOA_PCLK_EN()    	(RCC->AHB1ENR |= (1 << 0)) /*!< Enable GPIOA peripheral clock */
