@@ -1,7 +1,6 @@
 /*
  * spi_tx_testing.c
  *
- *  Created on: Nov 2, 2024
  *      Author: athul-muralidhar
  *
  */
@@ -38,7 +37,6 @@ void SPI2_GPIOInits(void) {
 	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_15;
 	GPIO_Init(&SPIPins);
 
-	// DISABLED as there is no slave in the current configuration
 //	// MISO
 //	SPIPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_14;
 //	GPIO_Init(&SPIPins);

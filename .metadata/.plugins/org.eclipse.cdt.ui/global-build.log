@@ -1,14 +1,272 @@
-15:47:06 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
-make -j16 all 
-arm-none-eabi-gcc "../drivers/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_i2c_driver.d" -MT"drivers/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_i2c_driver.o"
-arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32f4xx_drivers/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: stm32f4xx_drivers.elf
+09:12:55 **** Clean-only build of configuration Debug for project adc-voltage ****
+make -j16 clean 
+rm -rf ./Startup/startup_stm32f407vgtx.d ./Startup/startup_stm32f407vgtx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf adc-voltage.elf adc-voltage.list adc-voltage.map default.size.stdout
  
-arm-none-eabi-size  stm32f4xx_drivers.elf 
-arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
+09:12:56 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../drivers/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_gpio_driver.d" -MT"drivers/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc "../drivers/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_i2c_driver.d" -MT"drivers/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_i2c_driver.o"
+arm-none-eabi-gcc "../drivers/stm32f407xx_rcc_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_rcc_driver.d" -MT"drivers/stm32f407xx_rcc_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_rcc_driver.o"
+arm-none-eabi-gcc "../drivers/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_spi_driver.d" -MT"drivers/stm32f407xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_spi_driver.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
    text	   data	    bss	    dec	    hex	filename
-   2848	      0	   1568	   4416	   1140	stm32f4xx_drivers.elf
+   7784	     80	   1896	   9760	   2620	adc-voltage.elf
 Finished building: default.size.stdout
  
-Finished building: stm32f4xx_drivers.list
+Finished building: adc-voltage.list
+ 
+09:13:39 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+   text	   data	    bss	    dec	    hex	filename
+   7780	     80	   1896	   9756	   261c	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc-voltage.list
+ 
+09:14:41 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7780	     80	   1896	   9756	   261c	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:15:06 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7780	     80	   1896	   9756	   261c	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:15:22 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7780	     80	   1896	   9756	   261c	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:16:18 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+   text	   data	    bss	    dec	    hex	filename
+   7772	     80	   1896	   9748	   2614	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc-voltage.list
+ 
+09:16:56 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7772	     80	   1896	   9748	   2614	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:17:32 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7772	     80	   1896	   9748	   2614	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:18:23 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7772	     80	   1896	   9748	   2614	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:19:15 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+   text	   data	    bss	    dec	    hex	filename
+   7664	     80	   1896	   9640	   25a8	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc-voltage.list
+ 
+09:20:02 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:81:23: warning: unused variable 'voltage' [-Wunused-variable]
+   81 |                 float voltage = ConvertToVoltage(adcValue);
+      |                       ^~~~~~~
+../Src/main.c:78:22: warning: unused variable 'buffer' [-Wunused-variable]
+   78 |                 char buffer[50];
+      |                      ^~~~~~
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+   text	   data	    bss	    dec	    hex	filename
+   3772	      0	   1568	   5340	   14dc	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc-voltage.list
+ 
+09:20:43 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:81:23: warning: unused variable 'voltage' [-Wunused-variable]
+   81 |                 float voltage = ConvertToVoltage(adcValue);
+      |                       ^~~~~~~
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+   text	   data	    bss	    dec	    hex	filename
+   3772	      0	   1568	   5340	   14dc	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc-voltage.list
+ 
+09:21:03 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3772	      0	   1568	   5340	   14dc	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:21:35 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3772	      0	   1568	   5340	   14dc	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:22:24 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3772	      0	   1568	   5340	   14dc	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:23:12 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:82:26: error: 'buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+   82 |                 snprintf(buffer, sizeof(buffer), "voltage is %f", voltage);
+      |                          ^~~~~~
+      |                          setbuffer
+../Src/main.c:82:26: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+09:23:27 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+   text	   data	    bss	    dec	    hex	filename
+   7776	     80	   1896	   9752	   2618	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc-voltage.list
+ 
+09:23:28 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7776	     80	   1896	   9752	   2618	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:23:49 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7776	     80	   1896	   9752	   2618	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:25:41 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+   text	   data	    bss	    dec	    hex	filename
+  32460	    456	   1896	  34812	   87fc	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc-voltage.list
+ 
+09:26:00 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32460	    456	   1896	  34812	   87fc	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:26:43 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32460	    456	   1896	  34812	   87fc	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:27:18 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: adc-voltage.elf
+ 
+arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+   text	   data	    bss	    dec	    hex	filename
+  32464	    456	   1896	  34816	   8800	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+Finished building: adc-voltage.list
+ 
+09:27:46 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32464	    456	   1896	  34816	   8800	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:28:57 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32464	    456	   1896	  34816	   8800	adc-voltage.elf
+Finished building: default.size.stdout
+ 
+09:29:22 **** Incremental Build of configuration Debug for project adc-voltage ****
+make -j16 all 
+arm-none-eabi-size  adc-voltage.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32464	    456	   1896	  34816	   8800	adc-voltage.elf
+Finished building: default.size.stdout
  
