@@ -117,8 +117,11 @@ int main(void)
 	        delay();
 
 	        float voltage1 = ConvertToVoltage(adcValue1);
+	        delay();
 	        float voltage2 = ConvertToVoltage(adcValue2);
+	        delay();
 	        float voltage3 = ConvertToVoltage(adcValue3);
+	        delay();
 
 	        snprintf(buffer, sizeof(buffer), "voltage is %f", (voltage1 + voltage2 + voltage3 ));
 	        ITMPrint(buffer);

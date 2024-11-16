@@ -1,49 +1,95 @@
-12:22:01 **** Clean-only build of configuration Debug for project adc-voltage ****
-make -j16 clean 
-rm -rf ./drivers/stm32f407xx_gpio_driver.cyclo ./drivers/stm32f407xx_gpio_driver.d ./drivers/stm32f407xx_gpio_driver.o ./drivers/stm32f407xx_gpio_driver.su ./drivers/stm32f407xx_i2c_driver.cyclo ./drivers/stm32f407xx_i2c_driver.d ./drivers/stm32f407xx_i2c_driver.o ./drivers/stm32f407xx_i2c_driver.su ./drivers/stm32f407xx_rcc_driver.cyclo ./drivers/stm32f407xx_rcc_driver.d ./drivers/stm32f407xx_rcc_driver.o ./drivers/stm32f407xx_rcc_driver.su ./drivers/stm32f407xx_spi_driver.cyclo ./drivers/stm32f407xx_spi_driver.d ./drivers/stm32f407xx_spi_driver.o ./drivers/stm32f407xx_spi_driver.su
-rm -rf ./Startup/startup_stm32f407vgtx.d ./Startup/startup_stm32f407vgtx.o
-rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
-rm -rf adc-voltage.elf adc-voltage.list adc-voltage.map default.size.stdout
- 
-12:22:05 **** Build of configuration Debug for project adc-voltage ****
+07:01:11 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
 make -j16 all 
-arm-none-eabi-gcc "../drivers/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_gpio_driver.d" -MT"drivers/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_gpio_driver.o"
-arm-none-eabi-gcc "../drivers/stm32f407xx_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_i2c_driver.d" -MT"drivers/stm32f407xx_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_i2c_driver.o"
-arm-none-eabi-gcc "../drivers/stm32f407xx_rcc_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_rcc_driver.d" -MT"drivers/stm32f407xx_rcc_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_rcc_driver.o"
-arm-none-eabi-gcc "../drivers/stm32f407xx_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"drivers/stm32f407xx_spi_driver.d" -MT"drivers/stm32f407xx_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/stm32f407xx_spi_driver.o"
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/drivers" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc -o "adc-voltage.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/adc-voltage/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="adc-voltage.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: adc-voltage.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "spi1-stm32-f3-slave-2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32-f3-slave-2/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi1-stm32-f3-slave-2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi1-stm32-f3-slave-2.elf
  
-arm-none-eabi-size  adc-voltage.elf 
-arm-none-eabi-objdump -h -S adc-voltage.elf  > "adc-voltage.list"
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+arm-none-eabi-objdump -h -S spi1-stm32-f3-slave-2.elf  > "spi1-stm32-f3-slave-2.list"
    text	   data	    bss	    dec	    hex	filename
-  32768	    456	   1896	  35120	   8930	adc-voltage.elf
+  11576	     12	   1668	  13256	   33c8	spi1-stm32-f3-slave-2.elf
 Finished building: default.size.stdout
  
-Finished building: adc-voltage.list
+Finished building: spi1-stm32-f3-slave-2.list
  
-12:22:07 **** Incremental Build of configuration Debug for project adc-voltage ****
+07:01:17 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
 make -j16 all 
-arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "spi1-stm32-f3-slave-2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32-f3-slave-2/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi1-stm32-f3-slave-2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi1-stm32-f3-slave-2.elf
+ 
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+arm-none-eabi-objdump -h -S spi1-stm32-f3-slave-2.elf  > "spi1-stm32-f3-slave-2.list"
    text	   data	    bss	    dec	    hex	filename
-  32768	    456	   1896	  35120	   8930	adc-voltage.elf
+  11576	     12	   1668	  13256	   33c8	spi1-stm32-f3-slave-2.elf
 Finished building: default.size.stdout
  
-12:23:33 **** Incremental Build of configuration Debug for project adc-voltage ****
+Finished building: spi1-stm32-f3-slave-2.list
+ 
+07:01:49 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
 make -j16 all 
-arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:17: warning: unused variable 'str' [-Wunused-variable]
+  118 |           char* str = (char*)RX_Buffer;
+      |                 ^~~
+arm-none-eabi-gcc -o "spi1-stm32-f3-slave-2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32-f3-slave-2/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi1-stm32-f3-slave-2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi1-stm32-f3-slave-2.elf
+ 
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+arm-none-eabi-objdump -h -S spi1-stm32-f3-slave-2.elf  > "spi1-stm32-f3-slave-2.list"
    text	   data	    bss	    dec	    hex	filename
-  32768	    456	   1896	  35120	   8930	adc-voltage.elf
+  11448	     12	   1668	  13128	   3348	spi1-stm32-f3-slave-2.elf
 Finished building: default.size.stdout
  
-12:25:25 **** Incremental Build of configuration Debug for project adc-voltage ****
+Finished building: spi1-stm32-f3-slave-2.list
+ 
+07:02:18 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
 make -j16 all 
-arm-none-eabi-size  adc-voltage.elf 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "spi1-stm32-f3-slave-2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/athul-muralidhar/Mastering-Microcontroller-and-Embedded-Driver-Development/stm32-f3-slave-2/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="spi1-stm32-f3-slave-2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: spi1-stm32-f3-slave-2.elf
+ 
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+arm-none-eabi-objdump -h -S spi1-stm32-f3-slave-2.elf  > "spi1-stm32-f3-slave-2.list"
    text	   data	    bss	    dec	    hex	filename
-  32768	    456	   1896	  35120	   8930	adc-voltage.elf
+  11444	     12	   1668	  13124	   3344	spi1-stm32-f3-slave-2.elf
+Finished building: default.size.stdout
+ 
+Finished building: spi1-stm32-f3-slave-2.list
+ 
+07:04:17 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
+make -j16 all 
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	     12	   1668	  13124	   3344	spi1-stm32-f3-slave-2.elf
+Finished building: default.size.stdout
+ 
+07:04:37 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
+make -j16 all 
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	     12	   1668	  13124	   3344	spi1-stm32-f3-slave-2.elf
+Finished building: default.size.stdout
+ 
+07:05:10 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
+make -j16 all 
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	     12	   1668	  13124	   3344	spi1-stm32-f3-slave-2.elf
+Finished building: default.size.stdout
+ 
+07:05:49 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
+make -j16 all 
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	     12	   1668	  13124	   3344	spi1-stm32-f3-slave-2.elf
+Finished building: default.size.stdout
+ 
+07:06:19 **** Incremental Build of configuration Debug for project spi1-stm32-f3-slave-2 ****
+make -j16 all 
+arm-none-eabi-size  spi1-stm32-f3-slave-2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	     12	   1668	  13124	   3344	spi1-stm32-f3-slave-2.elf
 Finished building: default.size.stdout
  

@@ -1,0 +1,6 @@
+../Core/Src/slave.c:59:6:handleCmd	24	static
+../Core/Src/slave.c:78:5:main	16	static
+../Core/Src/slave.c:131:6:SystemClock_Config	72	static
+../Core/Src/slave.c:171:13:MX_SPI2_Init	8	static
+../Core/Src/slave.c:210:13:MX_GPIO_Init	48	static
+../Core/Src/slave.c:289:6:Error_Handler	4	static

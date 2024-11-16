@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc_clock_enable,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hello-world,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4xx_drivers,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hse_clock_enable,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc-voltage
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4xx_drivers,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc_clock_enable,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hello-world,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hse_clock_enable,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc-voltage,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4xx-spi2-master,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi2-slave,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi1-stm32-f4-master-1,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi1-stm32-f3-slave-2
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc-voltage/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc-voltage/activeLaunchTarget=null\:---
@@ -10,4 +10,11 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:adc_clock_enable/activeLaunchTa
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hello-world/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hello-world/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:hse_clock_enable/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi1-stm32-f3-slave-2/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi1-stm32-f4-master-1/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:spi2-slave/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32-f3-slave-2/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32-f4-master-1\ (1)/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32-f4-master-1/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4xx-spi2-master/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4xx_drivers/activeLaunchMode=debug
