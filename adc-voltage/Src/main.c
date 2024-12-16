@@ -6,12 +6,12 @@
 //#include "stm32f407xx_gpio_driver.h"
 #include "printer.h"
 
-#define RCC_APB2ENR_ADC1EN  (1 << 8)
-#define RCC_APB2ENR_ADC2EN  (1 << 9)
-#define RCC_APB2ENR_ADC3EN  (1 << 10)
+#define RCC_APB2ENR_ADC1EN  		(1 << 8)
+#define RCC_APB2ENR_ADC2EN  		(1 << 9)
+#define RCC_APB2ENR_ADC3EN  		(1 << 10)
 
-#define ADC_CR2_ADON        (1 << 0)
-#define ADC_CR2_SWSTART     (1 << 30)
+#define ADC_CR2_ADON        		(1 << 0)
+#define ADC_CR2_SWSTART     		(1 << 30)     // used to initiate a software-triggered ADC conversion.
 #define ADC_SR_EOC			(1 << 1)
 
 
